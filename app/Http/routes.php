@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/admin/user',['as' => 'admin.user.index', function () {
+    return view('admin.user.index');
+}]);
+
+Route::auth();
+
+Route::get('/admin', 'HomeController@index');
