@@ -17,6 +17,8 @@
 	  <link rel="stylesheet" href="{!! asset('assets/css/AdminLTE.min.css') !!}">
 	  <!-- DataTables -->
 	  <link rel="stylesheet" href="{!! asset('assets/css/dataTables.bootstrap.min.css') !!}">
+	  <!-- bootstrap wysihtml5 - text editor -->
+	  <link rel="stylesheet" href="{!! asset('assets/css/bootstrap3-wysihtml5.min.css') !!}">
 	  <!-- AdminLTE Skins. Choose a skin from the css/skins
 	       folder instead of downloading all of them to reduce the load. -->
 	  <link rel="stylesheet" href="{!! asset('assets/css/_all-skins.min.css') !!}">
@@ -32,7 +34,9 @@
 		  	@include('admin.layout.partials.sidebar')
 
 			<!-- Content Wrapper. Contains page content -->
-			@yield('content')
+			<div class="content-wrapper">
+				@yield('content')
+			</div>
 
 		  	<!-- Footer -->
 		  	@include('admin.layout.partials.footer')
@@ -48,6 +52,8 @@
 		<!-- DataTables -->
 		<script src="{!! asset('assets/js/jquery.dataTables.min.js') !!}"></script>
 		<script src="{!! asset('assets/js/dataTables.bootstrap.min.js') !!}"></script>
+		<!-- Bootstrap WYSIHTML5 -->
+		<script src="{!! asset('assets/js/bootstrap3-wysihtml5.all.min.js') !!}"></script>
 		<!-- Slimscroll -->
 		<script src="{!! asset('assets/js/jquery.slimscroll.min.js') !!}"></script>
 		<!-- FastClick -->

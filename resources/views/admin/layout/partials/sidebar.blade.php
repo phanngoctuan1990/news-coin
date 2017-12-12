@@ -4,7 +4,10 @@
 	<section class="sidebar">
 		<ul class="sidebar-menu" data-widget="tree">
 			<li class="header">MAIN NAVIGATION</li>
-			<li class="treeview active">
+			<li class="active">
+				<a href="{{ route('admin.dashboard') }}"><span>Dashboard</span></a>
+			</li>
+			<li class="treeview">
 				<a href="#">
 					<span>User</span>
 					<span class="pull-right-container">
@@ -13,6 +16,7 @@
 				</a>
 				<ul class="treeview-menu">
 					<li class="active"><a href="{{ route('admin.user.index') }}"><i class="fa fa-circle-o"></i> Index</a></li>
+					<li><a href="{{ route('admin.user.create') }}"><i class="fa fa-circle-o"></i> Create</a></li>
 				</ul>
 			</li>
 		</ul>

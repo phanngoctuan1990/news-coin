@@ -19,6 +19,13 @@ Route::get('/admin/user',['as' => 'admin.user.index', function () {
     return view('admin.user.index');
 }]);
 
+Route::get('/admin/user/create',['as' => 'admin.user.create', function () {
+    return view('admin.user.create');
+}]);
+
+Route::get('/admin/dashboard', ['as' => 'admin.dashboard', function () {
+    return view('admin.layout.dashboard');
+}]);
+
 Route::auth();
 
-Route::get('/admin', 'HomeController@index');
