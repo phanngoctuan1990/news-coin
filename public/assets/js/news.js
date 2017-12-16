@@ -12,19 +12,3 @@ $(function () {
         ]
     });
 });
-$(function () {
-    $(document).on('click', '[data-method="delete"]', function () {
-        var action = $(this).attr('href');
-        if (confirm('Bạn có chắc chắn muốn xoá?')) {
-            $.ajax({
-                type: "DELETE",
-                url: action,
-                success: function (result) {
-                    if (result.success) {
-                        window.location.href = 'admin/news';
-                    }
-                }
-            });
-        }
-    });
-});

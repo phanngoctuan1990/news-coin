@@ -4,6 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>@yield('title')</title>
         <!-- Tell the browser to be responsive to screen width -->
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -38,28 +39,39 @@
                 @yield('content')
             </div>
 
-            <script src="{!! asset('assets/js/jquery.min.js') !!}"></script>
-            <!-- Bootstrap 3.3.7 -->
-            <script src="{!! asset('assets/js/bootstrap.min.js') !!}"></script>
-            <!-- DataTables -->
-            <script src="{!! asset('assets/js/jquery.dataTables.min.js') !!}"></script>
-            <script src="{!! asset('assets/js/dataTables.bootstrap.min.js') !!}"></script>
-            <!-- bootstrap datepicker -->
-            <script src="{!! asset('assets/js/bootstrap-datepicker.min.js') !!}"></script>
-            <!-- Bootstrap WYSIHTML5 -->
-            <script src="{!! asset('assets/js/bootstrap3-wysihtml5.all.min.js') !!}"></script>
-            <!-- Slimscroll -->
-            <script src="{!! asset('assets/js/jquery.slimscroll.min.js') !!}"></script>
-            <!-- FastClick -->
-            <script src="{!! asset('assets/js/fastclick.js') !!}"></script>
-            <!-- AdminLTE App -->
-            <script src="{!! asset('assets/js/adminlte.min.js') !!}"></script>
-            <!-- AdminLTE for demo purposes -->
-            <script src="{!! asset('assets/js/demo.js') !!}"></script>
+            <!-- Footer -->
+            @include('admin.layout.partials.footer')
 
-            <script src="{!! asset('assets/js/news.js') !!}"></script>
-            <script src="{!! asset('assets/js/coin.js') !!}"></script>
-            <!-- page script -->
-            @yield('script')
+            <div class="control-sidebar-bg"></div>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery 3 -->
+        <script src="{!! asset('assets/js/jquery.min.js') !!}"></script>
+        <!-- Bootstrap 3.3.7 -->
+        <script src="{!! asset('assets/js/bootstrap.min.js') !!}"></script>
+        <!-- DataTables -->
+        <script src="{!! asset('assets/js/jquery.dataTables.min.js') !!}"></script>
+        <script src="{!! asset('assets/js/dataTables.bootstrap.min.js') !!}"></script>
+        <!-- bootstrap datepicker -->
+        <script src="{!! asset('assets/js/bootstrap-datepicker.min.js') !!}"></script>
+        <!-- Bootstrap WYSIHTML5 -->
+        <script src="{!! asset('assets/js/bootstrap3-wysihtml5.all.min.js') !!}"></script>
+        <!-- Slimscroll -->
+        <script src="{!! asset('assets/js/jquery.slimscroll.min.js') !!}"></script>
+        <!-- FastClick -->
+        <script src="{!! asset('assets/js/fastclick.js') !!}"></script>
+        <!-- Box confirm -->
+        <script src="{!! asset('assets/js/bootbox.min.js') !!}"></script>
+        <!-- AdminLTE App -->
+        <script src="{!! asset('assets/js/adminlte.min.js') !!}"></script>
+        <!-- AdminLTE for demo purposes -->
+        <script src="{!! asset('assets/js/demo.js') !!}"></script>
+
+        <!-- Page script -->
+        <script src="{!! asset('assets/js/main.js') !!}"></script>
+        <script src="{!! asset('assets/js/news.js') !!}"></script>
+        <script src="{!! asset('assets/js/coin.js') !!}"></script>
+        @yield('script')
     </body>
 </html>

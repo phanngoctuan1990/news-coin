@@ -1,5 +1,5 @@
 @extends('admin.layout.master')
-@section('title', 'Manager User')
+@section('title', 'Manager News')
 @section('content')
 <!-- Content Header (Page header) -->
 <section class="content-header">

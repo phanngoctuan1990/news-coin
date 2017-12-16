@@ -6,19 +6,10 @@ use Carbon\Carbon;
 use App\Models\Coin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateCoinRequest;
+use App\Http\Requests\UpdateCoinRequest;
 
 class CoinController extends Controller
 {
-    /**
-     * Create a coin controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-
-    }
-
     /**
      * Show the application dashboard.
      *
@@ -30,7 +21,7 @@ class CoinController extends Controller
     }
 
     /**
-     * Show the Branch create.
+     * Show the Coin create.
      *
      * @return \Illuminate\Http\Response
      */
@@ -40,40 +31,72 @@ class CoinController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param int $id id
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-
-    }
-
-    /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request request update
-     * @param int                      $id      id      branch
+     * @param UpdateCoinRequest request update
+     * @param int $id coin id
      *
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateCoinRequest $request, $id)
     {
+        $data = $request->all();
+        $coin = Coin::find($id);
+        $coin->name       = $data['name'];
+        $coin->rate       = $data['rate'];
+        $coin->hype       = $data['hype'];
+        $coin->scam       = $data['scam'];
+        $coin->moom       = $data['moom'];
+        $coin->price      = $data['price'];
+        $coin->stage      = $data['stage'];
+        $coin->start_date = Carbon::parse($data['start_date'])->format('Y-m-d');
+        $coin->end_date   = Carbon::parse($data['end_date'])->format('Y-m-d');
 
+        // handle image
+        if ($request->hasFile('thumbnail')) {
+            \File::delete(public_path('/images/coins/' . $coin->thumbnail));
+            $img = $request->file('thumbnail');
+            $input['thumbnail'] = time() . '.' . $img->getClientOriginalExtension();
+            $destinationPath = public_path('/images/coins/');
+            $img->move($destinationPath, $input['thumbnail']);
+            $coin->thumbnail = $input['thumbnail'];
+        }
+
+        $coin->save();
+        return redirect()->route('admin.coin.index');
     }
     
     /**
-     * Show the form detail branch
+     * Show the form detail coin
      *
-     * @param int $id id
+     * @param int $id coin id
      *
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
+        $coin             = Coin::find($id);
+        $coin->thumbnail  = asset('/images/coins/' . $coin->thumbnail);
+        $coin->start_date = Carbon::parse($coin->start_date)->format('d-m-Y');
+        $coin->end_date   = Carbon::parse($coin->end_date)->format('d-m-Y');
+        $coin->name       = htmlentities($coin->name);
+        $coin->rate       = htmlentities($coin->rate);
+        return view('admin.coin.show', compact('coin'));
+    }
 
+    /**
+     * Delete coin
+     *
+     * @param int $id Coin id
+     *
+     * @return void
+     */
+    public function destroy($id)
+    {
+        $coin = Coin::find($id);
+        $coin->delete();
+        \File::delete(public_path('/images/coins/' . $coin->thumbnail));
+        return redirect()->route('admin.coin.index');
     }
     
     /**
@@ -87,16 +110,16 @@ class CoinController extends Controller
     {
         $data = $request->all();
         $coin = new Coin;
-        $coin->name = $data['name'];
-        $coin->rate = $data['rate'];
-        $coin->hype = $data['hype'];
-        $coin->scam = $data['scam'];
-        $coin->moom = $data['moom'];
-        $coin->price = $data['price'];
-        $coin->stage = $data['stage'];
+        $coin->name       = $data['name'];
+        $coin->rate       = $data['rate'];
+        $coin->hype       = $data['hype'];
+        $coin->scam       = $data['scam'];
+        $coin->moom       = $data['moom'];
+        $coin->price      = $data['price'];
+        $coin->stage      = $data['stage'];
         $coin->start_date = Carbon::parse($data['start_date'])->format('Y-m-d');
-        $coin->end_date = Carbon::parse($data['end_date'])->format('Y-m-d');;
-        $coin->round = 'round';
+        $coin->end_date   = Carbon::parse($data['end_date'])->format('Y-m-d');;
+        $coin->round      = 'round';
 
         // upload image
         $img = $request->file('thumbnail');
