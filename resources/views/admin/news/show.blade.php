@@ -16,7 +16,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="box box-primary">
-                <form role="form" action="{{ route('admin.news.update', $new->id) }}" method="POST" enctype="multipart/form-data">
+                <form role="form" id="form-update-news" action="{{ route('admin.news.update', $new->id) }}" method="POST" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     {{ method_field('PUT') }}
                     <div class="box-body">
@@ -44,6 +44,7 @@
 </section>
 @endsection
 @section('script')
+{!! JsValidator::formRequest('App\Http\Requests\UpdateNewsRequest', '#form-update-news') !!}
 <script>
     $(function () {
         //bootstrap WYSIHTML5 - text editor

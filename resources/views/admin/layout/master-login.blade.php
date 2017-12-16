@@ -22,6 +22,7 @@
             <div class="login-logo">
                 <a href="#"><b>Bit</b>Coin</a>
             </div>
+            @include('flash::message')
             <!-- /.login-logo -->
             @yield('content')
             <!-- /.login-box-body -->
@@ -32,5 +33,7 @@
         <script src="{!! asset('assets/js/jquery.min.js') !!}"></script>
         <!-- Bootstrap 3.3.7 -->
         <script src="{!! asset('assets/js/bootstrap.min.js') !!}"></script>
+        <!-- Laravel Javascript Validation -->
+        <script type="text/javascript" src="{{ asset('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
     </body>
 </html>
