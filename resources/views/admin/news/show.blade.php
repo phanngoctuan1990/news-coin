@@ -35,7 +35,7 @@
                     <div class="box-footer">
                         <a href="{{ route('admin.news.index') }}" class="btn btn-danger btn-sm">Thoát</a>
                         <button type="submit" class="btn btn-primary btn-sm">Sửa</button>
-                        
+
                     </div>
                 </form>
             </div>
