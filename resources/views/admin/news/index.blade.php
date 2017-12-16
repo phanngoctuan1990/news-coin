@@ -7,9 +7,9 @@
         Danh sách bài viết
     </h1>
     <ol class="breadcrumb">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">News</a></li>
-        <li class="active">Index</li>
+        <li><a href="#">Admin</a></li>
+        <li><a href="#">Bài viết</a></li>
+        <li class="active">Danh sách bài viết</li>
     </ol>
 </section>
 
