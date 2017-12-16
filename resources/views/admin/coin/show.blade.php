@@ -17,7 +17,7 @@
         <div class="col-md-12">
             <div class="box box-primary">
                 <!-- form start -->
-                <form role="form" action="{{ route('admin.coin.update', $coin->id) }}" method="POST" enctype="multipart/form-data">
+                <form role="form" id="form-update-coin" action="{{ route('admin.coin.update', $coin->id) }}" method="POST" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     {{ method_field('PUT') }}
                     <div class="box-body">
@@ -126,7 +126,7 @@
                         <!-- datepicker -->
                         <div class="form-inline">
                             <div class="form-group">
-                                <label>Ngày bắt </label>
+                                <label>Ngày bắt đầu</label>
                                 <div class="input-group date">
                                     <div class="input-group-addon">
                                         <i class="fa fa-calendar"></i>
@@ -147,7 +147,7 @@
 
                         <!-- stage -->
                         <div class="form-group">
-                            <label>Trạng thái</label>
+                        <label>Trạng thái</label>
                             <div class="radio">
                                 <label class="radio-inline">
                                 <input type="radio" name="stage"  value="{{ \App\Models\Coin::TYPE_ENDED }}" @if($coin->stage == \App\Models\Coin::TYPE_ENDED) checked @endif>
@@ -186,6 +186,7 @@
 </section>
 @endsection
 @section('script')
+{!! JsValidator::formRequest('App\Http\Requests\UpdateCoinRequest', '#form-update-coin') !!}
 <script>
     $(function () {
         //bootstrap WYSIHTML5 - text editor

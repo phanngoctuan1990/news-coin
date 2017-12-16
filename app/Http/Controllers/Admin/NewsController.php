@@ -41,6 +41,7 @@ class NewsController extends Controller
         $new->title = $data['title'];
         $new->content = $data['content'];
         $new->save();
+        flash('Tạo mới tin tức thành công', 'success');
         return redirect()->route('admin.news.index');
     }
     
@@ -72,6 +73,7 @@ class NewsController extends Controller
         $new->title = $data['title'];
         $new->content = $data['content'];
         $new->save();
+        flash('Cập nhật tin tức thành công', 'success');
         return redirect()->route('admin.news.index');
     }
     
@@ -86,6 +88,7 @@ class NewsController extends Controller
     {
         $new = News::find($id);
         $new->delete();
+        flash('Xoá tin tức thành công', 'success');
         return redirect()->route('admin.news.index');
     }
 
@@ -109,6 +112,7 @@ class NewsController extends Controller
         $new = News::find($id);
         $new->status = News::ACCEPT;
         $new->save();
+        flash('Cập nhật trạng thái tin tức thành công', 'success');
         return redirect()->route('admin.news.index');
     }
 }

@@ -4,7 +4,7 @@
     <p class="login-box-msg">Sign in to start your session</p>
     <form action="{{ url('/login') }}" method="post">
         {{ csrf_field() }}
-        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }} has-feedback">
+        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }} has-feedback">
             <input id="email" type="email" class="form-control" name="email" placeholder="Email" value="{{ old('email') }}">
 
             @if ($errors->has('email'))

@@ -150,6 +150,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Yajra\Datatables\DatatablesServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
+        Proengsoft\JsValidation\JsValidationServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -207,7 +208,7 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'Datatables' => Yajra\Datatables\Facades\Datatables::class,
-
+        'JsValidator' => Proengsoft\JsValidation\Facades\JsValidatorFacade::class,
     ],
 
 ];

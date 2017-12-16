@@ -63,6 +63,7 @@ class CoinController extends Controller
         }
 
         $coin->save();
+        flash('Cập nhật coin thành công', 'success');
         return redirect()->route('admin.coin.index');
     }
     
@@ -96,6 +97,7 @@ class CoinController extends Controller
         $coin = Coin::find($id);
         $coin->delete();
         \File::delete(public_path('/images/coins/' . $coin->thumbnail));
+        flash('Xoá coin thành công', 'success');
         return redirect()->route('admin.coin.index');
     }
     
@@ -129,6 +131,7 @@ class CoinController extends Controller
         $coin->thumbnail = $input['thumbnail'];
 
         $coin->save();
+        flash('Tạo mới coin thành công', 'success');
         return redirect()->route('admin.coin.index');
     }
 

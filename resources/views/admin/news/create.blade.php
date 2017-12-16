@@ -15,7 +15,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="box box-primary">
-                <form role="form" action="{{ route('admin.news.store') }}" method="POST" enctype="multipart/form-data">
+                <form role="form" id="form-create-news" action="{{ route('admin.news.store') }}" method="POST" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="box-body">
                         <div class="form-group">
@@ -38,6 +38,7 @@
 </section>
 @endsection
 @section('script')
+{!! JsValidator::formRequest('App\Http\Requests\CreateNewsRequest', '#form-create-news') !!}
 <script>
     $(function () {
         //bootstrap WYSIHTML5 - text editor

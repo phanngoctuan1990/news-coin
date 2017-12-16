@@ -21,7 +21,7 @@
             <!-- general form elements -->
             <div class="box box-primary">
                 <!-- form start -->
-                <form role="form" action="{{ route('admin.coin.store') }}" method="POST" enctype="multipart/form-data">
+                <form role="form" id="form-create-coin" action="{{ route('admin.coin.store') }}" method="POST" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="box-body">
                         <div class="form-group">
@@ -127,7 +127,7 @@
                         <!-- datepicker -->
                         <div class="form-inline">
                             <div class="form-group">
-                                <label>Ngày bắt </label>
+                                <label>Ngày bắt đầu</label>
                                 <div class="input-group date">
                                     <div class="input-group-addon">
                                         <i class="fa fa-calendar"></i>
@@ -190,6 +190,7 @@
 <!-- /.content -->
 @endsection
 @section('script')
+{!! JsValidator::formRequest('App\Http\Requests\CreateCoinRequest', '#form-create-coin') !!}
 <script>
     $(function () {
         //bootstrap WYSIHTML5 - text editor

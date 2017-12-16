@@ -36,6 +36,7 @@
 
             <!-- Content Wrapper. Contains page content -->
             <div class="content-wrapper">
+                @include('flash::message')
                 @yield('content')
             </div>
 
@@ -50,6 +51,8 @@
         <script src="{!! asset('assets/js/jquery.min.js') !!}"></script>
         <!-- Bootstrap 3.3.7 -->
         <script src="{!! asset('assets/js/bootstrap.min.js') !!}"></script>
+        <!-- Laravel Javascript Validation -->
+        <script type="text/javascript" src="{{ asset('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
         <!-- DataTables -->
         <script src="{!! asset('assets/js/jquery.dataTables.min.js') !!}"></script>
         <script src="{!! asset('assets/js/dataTables.bootstrap.min.js') !!}"></script>
