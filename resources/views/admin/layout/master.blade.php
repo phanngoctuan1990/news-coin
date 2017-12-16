@@ -17,6 +17,8 @@
 	  <link rel="stylesheet" href="{!! asset('assets/css/AdminLTE.min.css') !!}">
 	  <!-- DataTables -->
 	  <link rel="stylesheet" href="{!! asset('assets/css/dataTables.bootstrap.min.css') !!}">
+	  <!-- bootstrap datepicker -->
+  	  <link rel="stylesheet" href="{!! asset('assets/css/bootstrap-datepicker.min.css') !!}">
 	  <!-- bootstrap wysihtml5 - text editor -->
 	  <link rel="stylesheet" href="{!! asset('assets/css/bootstrap3-wysihtml5.min.css') !!}">
 	  <!-- AdminLTE Skins. Choose a skin from the css/skins
@@ -52,6 +54,8 @@
 		<!-- DataTables -->
 		<script src="{!! asset('assets/js/jquery.dataTables.min.js') !!}"></script>
 		<script src="{!! asset('assets/js/dataTables.bootstrap.min.js') !!}"></script>
+		<!-- bootstrap datepicker -->
+		<script src="{!! asset('assets/js/bootstrap-datepicker.min.js') !!}"></script>
 		<!-- Bootstrap WYSIHTML5 -->
 		<script src="{!! asset('assets/js/bootstrap3-wysihtml5.all.min.js') !!}"></script>
 		<!-- Slimscroll -->
@@ -62,6 +66,9 @@
 		<script src="{!! asset('assets/js/adminlte.min.js') !!}"></script>
 		<!-- AdminLTE for demo purposes -->
 		<script src="{!! asset('assets/js/demo.js') !!}"></script>
+                
+        <script src="{!! asset('assets/js/news.js') !!}"></script>
+        <script src="{!! asset('assets/js/coin.js') !!}"></script>
 		<!-- page script -->
 		@yield('script')
 	</body>

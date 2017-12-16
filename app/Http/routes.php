@@ -1,15 +1,15 @@
 <?php
 
 /*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
+  |--------------------------------------------------------------------------
+  | Application Routes
+  |--------------------------------------------------------------------------
+  |
+  | Here is where you can register all of the routes for an application.
+  | It's a breeze. Simply tell Laravel the URIs it should respond to
+  | and give it the controller to call when that URI is requested.
+  |
+ */
 
 Route::auth();
 
@@ -31,7 +31,16 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
 		    return view('admin.user.create');
 		}]);
 
-		// Coin
-		Route::resource('/coin', 'CoinController');
+    // News
+    Route::get('/news/datatables', 'NewsController@datatables');
+    Route::resource('/news', 'NewsController');
+    Route::get('/news/update-status/{id}', [
+        'as' => 'admin.news.updateStatus',
+        'uses' => 'NewsController@updateStatus'
+    ]);
+
+    // Coin
+    Route::get('/coin/datatables', 'CoinController@datatables');
+    Route::resource('/coin', 'CoinController');
 	});
 });

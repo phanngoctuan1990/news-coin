@@ -3,109 +3,189 @@
 @section('content')
 <!-- Content Header (Page header) -->
 <section class="content-header">
-	<h1>
-		Create coin
-	</h1>
-	<ol class="breadcrumb">
-		<li><a href="#">Home</a></li>
-		<li><a href="#">Coin</a></li>
-		<li class="active">Create</li>
-	</ol>
+    <h1>
+        Tạo mới coin
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Coin</a></li>
+        <li class="active">Tạo mới</li>
+    </ol>
 </section>
 
 <!-- Main content -->
 <section class="content">
-  <div class="row">
+    <div class="row">
     <!-- left column -->
-    <div class="col-md-12">
-      <!-- general form elements -->
-      <div class="box box-primary">
-        <!-- form start -->
-        <form role="form">
-          <div class="box-body">
-            <div class="form-group">
-              <label>Name</label>
-              <input type="text" class="form-control" placeholder="Enter Name">
-            </div>
-            <div class="form-group">
-              <label>Thumbnail</label>
-              <input type="file">
-            </div>
-            <div class="form-group">
-              <label>Rate</label>
-              <input type="text" class="form-control" placeholder="Enter rate">
-            </div>
+        <div class="col-md-12">
+            <!-- general form elements -->
+            <div class="box box-primary">
+                <!-- form start -->
+                <form role="form" action="{{ route('admin.coin.store') }}" method="POST" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                    <div class="box-body">
+                        <div class="form-group">
+                            <label>Tiêu đề</label>
+                            <input type="text" name="name" class="form-control" placeholder="Nhập tiêu đề">
+                        </div>
+                        <div class="form-group">
+                            <label>Thumbnail</label>
+                            <input type="file" name="thumbnail">
+                        </div>
+                        <div class="form-group">
+                            <label>Rate</label>
+                            <input type="text" name="rate" class="form-control" placeholder="Nhập rate">
+                        </div>
+                        <div class="form-group">
+                            <label>Giá</label>
+                            <input type="number" name="price" class="form-control" placeholder="Nhập giá">
+                        </div>
 
-            <!-- radio -->
-            <div class="form-group">
-	          <label>Hype</label>
-              <div class="radio">
-                <label>
-                  <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                  Very low
-                </label>
-                
-                <label>
-                  <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                  Low
-                </label>
-              </div>
-              <div class="radio">
-                <label>
-                  <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                  Low
-                </label>
-              </div>
-              <div class="radio">
-                <label>
-                  <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
-                  Medium
-                </label>
-              </div>
-              <div class="radio">
-                <label>
-                  <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
-                  High
-                </label>
-              </div>
-              <div class="radio">
-                <label>
-                  <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
-                  Very high
-                </label>
-              </div>
-            </div>
+                        <!-- Hype -->
+                        <div class="form-group">
+                            <label>Hype</label>
+                            <div class="radio">
+                                <label class="radio-inline">
+                                <input type="radio" name="hype" value="{{ \App\Models\Coin::TYPE_VERY_LOW }}" checked>
+                                Rất thấp
+                                </label>
+                                <label class="radio-inline">
+                                <input type="radio" name="hype" value="{{ \App\Models\Coin::TYPE_LOW }}">
+                                Thấp
+                                </label>
+                                <label class="radio-inline">
+                                <input type="radio" name="hype" value="{{ \App\Models\Coin::TYPE_MEDIUM }}">
+                                Trung bình
+                                </label>
+                                <label class="radio-inline">
+                                <input type="radio" name="hype" value="{{ \App\Models\Coin::TYPE_HIGH }}">
+                                Cao
+                                </label>
+                                <label class="radio-inline">
+                                <input type="radio" name="hype"  value="{{ \App\Models\Coin::TYPE_VERY_HIGH }}">
+                                Rất Cao
+                                </label>
+                            </div>
+                        </div>
 
-            <!-- select -->
-            <div class="form-group">
-              <label>Select</label>
-              <select class="form-control">
-                <option>option 1</option>
-                <option>option 2</option>
-                <option>option 3</option>
-                <option>option 4</option>
-                <option>option 5</option>
-              </select>
-            </div>
+                        <!-- Scam -->
+                        <div class="form-group">
+                            <label>Scam</label>
+                            <div class="radio">
+                                <label class="radio-inline">
+                                <input type="radio" name="scam"  value="{{ \App\Models\Coin::TYPE_VERY_LOW }}" checked>
+                                Rất thấp
+                                </label>
 
-            <!-- wysiwyg -->
-            <div class="form-group">
-                <label>Textarea</label>
-                    <textarea class="textarea" placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
-            </div>
-          </div>
-          <!-- /.box-body -->
+                                <label class="radio-inline">
+                                <input type="radio" name="scam" value="{{ \App\Models\Coin::TYPE_LOW }}">
+                                Thấp
+                                </label>
+                                <label class="radio-inline">
+                                <input type="radio" name="scam"  value="{{ \App\Models\Coin::TYPE_MEDIUM }}">
+                                Trung bình
+                                </label>
+                                <label class="radio-inline">
+                                <input type="radio" name="scam"  value="{{ \App\Models\Coin::TYPE_HIGH }}">
+                                Cao
+                                </label>
+                                <label class="radio-inline">
+                                <input type="radio" name="scam"  value="{{ \App\Models\Coin::TYPE_VERY_HIGH }}">
+                                Rất Cao
+                                </label>
+                            </div>
+                        </div>
 
-          <div class="box-footer">
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </div>
-        </form>
-      </div>
-      <!-- /.box -->
+                        <!-- Moom -->
+                        <div class="form-group">
+                            <label>Moom</label>
+                            <div class="radio">
+                                <label class="radio-inline">
+                                <input type="radio" name="moom"  value="{{ \App\Models\Coin::TYPE_VERY_LOW }}" checked>
+                                Rất thấp
+                                </label>
+
+                                <label class="radio-inline">
+                                <input type="radio" name="moom"  value="{{ \App\Models\Coin::TYPE_LOW }}">
+                                Thấp
+                                </label>
+                                <label class="radio-inline">
+                                <input type="radio" name="moom"  value="{{ \App\Models\Coin::TYPE_MEDIUM }}">
+                                Trung bình
+                                </label>
+                                <label class="radio-inline">
+                                <input type="radio" name="moom"  value="{{ \App\Models\Coin::TYPE_HIGH }}">
+                                Cao
+                                </label>
+                                <label class="radio-inline">
+                                <input type="radio" name="moom"  value="{{ \App\Models\Coin::TYPE_VERY_HIGH }}">
+                                Rất Cao
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- datepicker -->
+                        <div class="form-inline">
+                            <div class="form-group">
+                                <label>Ngày bắt </label>
+                                <div class="input-group date">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-calendar"></i>
+                                    </div>
+                                    <input type="text" name="start_date" class="form-control pull-right" id="start-date">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Ngày kết thúc</label>
+                                <div class="input-group date">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-calendar"></i>
+                                    </div>
+                                    <input type="text" name="end_date" class="form-control pull-right" id="end-date">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- stage -->
+                        <div class="form-group">
+                            <label>Trạng thái</label>
+                            <div class="radio">
+                                <label class="radio-inline">
+                                <input type="radio" name="stage"  value="{{ \App\Models\Coin::TYPE_ENDED }}" checked>
+                                ENDED
+                                </label>
+
+                                <label class="radio-inline">
+                                <input type="radio" name="stage"  value="{{ \App\Models\Coin::TYPE_EXCHANGE }}">
+                                EXCHANGE
+                                </label>
+                                <label class="radio-inline">
+                                <input type="radio" name="stage" value="{{ \App\Models\Coin::TYPE_ICO }}">
+                                ICO
+                                </label>
+                                <label class="radio-inline">
+                                <input type="radio" name="stage" value="{{ \App\Models\Coin::TYPE_ICO_TODAY }}">
+                                ICO TODAY
+                                </label>
+                                <label class="radio-inline">
+                                <input type="radio" name="stage" value="{{ \App\Models\Coin::TYPE_SCAM }}">
+                                SCAM
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.box-body -->
+
+                    <div class="box-footer">
+                        <button type="submit" class="btn btn-primary">Tạo mới</button>
+                    </div>
+                </form>
+            </div>
+            <!-- /.box -->
+        </div>
+        <!--/.col (left) -->
     </div>
-    <!--/.col (left) -->
-  </div>
-  <!-- /.row -->
+    <!-- /.row -->
 </section>
 <!-- /.content -->
 @endsection
@@ -114,6 +194,15 @@
     $(function () {
         //bootstrap WYSIHTML5 - text editor
         $('.textarea').wysihtml5();
+        //Date picker
+        $('#start-date').datepicker({
+            format: 'dd-mm-yyyy',
+            autoclose: true
+        });
+        $('#end-date').datepicker({
+            format: 'dd-mm-yyyy',
+            autoclose: true
+        });
     })
 </script>
 @endsection
