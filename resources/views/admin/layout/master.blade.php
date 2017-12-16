@@ -62,6 +62,8 @@
 		<script src="{!! asset('assets/js/adminlte.min.js') !!}"></script>
 		<!-- AdminLTE for demo purposes -->
 		<script src="{!! asset('assets/js/demo.js') !!}"></script>
+                
+                <script src="{!! asset('assets/js/news.js') !!}"></script>
 		<!-- page script -->
 		@yield('script')
 	</body>
