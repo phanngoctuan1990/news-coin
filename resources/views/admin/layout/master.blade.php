@@ -4,6 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>@yield('title')</title>
         <!-- Tell the browser to be responsive to screen width -->
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -58,11 +59,14 @@
         <script src="{!! asset('assets/js/jquery.slimscroll.min.js') !!}"></script>
         <!-- FastClick -->
         <script src="{!! asset('assets/js/fastclick.js') !!}"></script>
+        <!-- Box confirm -->
+        <script src="{!! asset('assets/js/bootbox.min.js') !!}"></script>
         <!-- AdminLTE App -->
         <script src="{!! asset('assets/js/adminlte.min.js') !!}"></script>
         <!-- AdminLTE for demo purposes -->
         <script src="{!! asset('assets/js/demo.js') !!}"></script>
 
+        <script src="{!! asset('assets/js/main.js') !!}"></script>
         <script src="{!! asset('assets/js/news.js') !!}"></script>
         <!-- page script -->
         @yield('script')
