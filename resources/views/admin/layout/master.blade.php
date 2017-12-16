@@ -53,6 +53,8 @@
         <!-- DataTables -->
         <script src="{!! asset('assets/js/jquery.dataTables.min.js') !!}"></script>
         <script src="{!! asset('assets/js/dataTables.bootstrap.min.js') !!}"></script>
+        <!-- bootstrap datepicker -->
+        <script src="{!! asset('assets/js/bootstrap-datepicker.min.js') !!}"></script>
         <!-- Bootstrap WYSIHTML5 -->
         <script src="{!! asset('assets/js/bootstrap3-wysihtml5.all.min.js') !!}"></script>
         <!-- Slimscroll -->
@@ -66,9 +68,10 @@
         <!-- AdminLTE for demo purposes -->
         <script src="{!! asset('assets/js/demo.js') !!}"></script>
 
+        <!-- Page script -->
         <script src="{!! asset('assets/js/main.js') !!}"></script>
         <script src="{!! asset('assets/js/news.js') !!}"></script>
-        <!-- page script -->
+        <script src="{!! asset('assets/js/coin.js') !!}"></script>
         @yield('script')
     </body>
 </html>

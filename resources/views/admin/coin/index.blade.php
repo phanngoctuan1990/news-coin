@@ -1,15 +1,15 @@
 @extends('admin.layout.master')
-@section('title', 'Manager News')
+@section('title', 'Manager Coin')
 @section('content')
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
-        Danh sách bài viết
+        Danh sách coin
     </h1>
     <ol class="breadcrumb">
-        <li><a href="#">Admin</a></li>
-        <li><a href="#">Bài viết</a></li>
-        <li class="active">Danh sách bài viết</li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Coin</a></li>
+        <li class="active">Index</li>
     </ol>
 </section>
 
@@ -19,13 +19,20 @@
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-body">
-                    <table id="news" class="table table-bordered table-striped">
+                    <table id="coins" class="table table-bordered table-striped">
                         <thead>
                             <tr>
                                 <th>ID</th>
                                 <th>Tiêu đề</th>
-                                <th>Nội dung</th>
-                                <th>Ngày tạo</th>
+                                <th>Thumbnail</th>
+                                <th>Rate</th>
+                                <th>Hype</th>
+                                <th>Scam</th>
+                                <th>Moom</th>
+                                <th>Ngày bắt đầu</th>
+                                <th>Ngày kết thúc</th>
+                                <th>Trạng thái</th>
+                                <th>Giá</th>
                                 <th>Tác vụ</th>
                             </tr>
                         </thead>

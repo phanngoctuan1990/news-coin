@@ -17,21 +17,30 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-Route::group(['middleware' => 'auth'], function () {
-    Route::get('/admin/user', ['as' => 'admin.user.index', function () {
-            return view('admin.user.index');
-        }]);
-    Route::get('/admin/user/create', ['as' => 'admin.user.create', function () {
-            return view('admin.user.create');
-        }]);
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
+	Route::group(['middleware' => 'auth'], function () {
+		Route::get('/dashboard', ['as' => 'admin.dashboard', function () {
+		    return view('admin.layout.dashboard');
+		}]);
 
-    Route::get('/admin/dashboard', ['as' => 'admin.dashboard', function () {
-            return view('admin.layout.dashboard');
-        }]);
-    Route::get('/admin/news/datatables', 'Admin\NewsController@datatables');
-    Route::resource('/admin/news', 'Admin\NewsController');
-    Route::get('/admin/news/update-status/{id}', [
+		// User
+		Route::get('/user', ['as' => 'admin.user.index', function () {
+		    return view('admin.user.index');
+		}]);
+		Route::get('/user/create', ['as' => 'admin.user.create', function () {
+		    return view('admin.user.create');
+		}]);
+
+    // News
+    Route::get('/news/datatables', 'NewsController@datatables');
+    Route::resource('/news', 'NewsController');
+    Route::get('/news/update-status/{id}', [
         'as' => 'admin.news.updateStatus',
-        'uses' => 'Admin\NewsController@updateStatus'
+        'uses' => 'NewsController@updateStatus'
     ]);
+
+    // Coin
+    Route::get('/coin/datatables', 'CoinController@datatables');
+    Route::resource('/coin', 'CoinController');
+	});
 });
