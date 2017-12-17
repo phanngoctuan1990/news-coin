@@ -53,6 +53,7 @@ class UserController extends Controller {
             ];
         }
         \DB::table('user_role')->insert($userRole);
+        flash('Tạo mới tài khoản thành công', 'success');
         return redirect()->route('admin.user.index');
     }
 
@@ -98,6 +99,7 @@ class UserController extends Controller {
             ];
         }
         \DB::table('user_role')->insert($userRole);
+        flash('Cập nhật tài khoản thành công', 'success');
         return redirect()->route('admin.user.index');
     }
 
@@ -111,6 +113,7 @@ class UserController extends Controller {
     public function destroy($id) {
         $user = User::find($id);
         $user->delete();
+        flash('Xoá tài khoản thành công', 'success');
         return redirect()->route('admin.user.index');
     }
 

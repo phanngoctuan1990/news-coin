@@ -9,7 +9,7 @@
     <ol class="breadcrumb">
         <li><a href="#">Home</a></li>
         <li><a href="#">Thể loại coin</a></li>
-        <li class="active">Index</li>
+        <li class="active">Danh sách thể loại coin</li>
     </ol>
 </section>
 

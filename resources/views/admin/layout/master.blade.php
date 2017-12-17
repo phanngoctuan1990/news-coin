@@ -23,6 +23,8 @@
              folder instead of downloading all of them to reduce the load. -->
         <link rel="stylesheet" href="{!! asset('assets/css/_all-skins.min.css') !!}">
         <!-- jvectormap -->
+        <!--Customize css-->
+        <link rel="stylesheet" href="{!! asset('assets/css/main.css') !!}">
     </head>
 
     <body class="hold-transition skin-blue sidebar-mini">
