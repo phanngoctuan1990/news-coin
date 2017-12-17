@@ -1,5 +1,5 @@
 @extends('admin.layout.master')
-@section('title', 'Manager News')
+@section('title', 'Quản lý bài viết')
 @section('content')
 <section class="content-header">
     <h1>

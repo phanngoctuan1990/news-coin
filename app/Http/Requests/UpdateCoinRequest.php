@@ -26,6 +26,7 @@ class UpdateCoinRequest extends Request
     {
         $rules = [
             'name'        => 'required',
+            'category_coin_id' => 'required|exists:category_coin,id',
             'thumbnail'   => 'image|mimes:jpg,gif,png,jpeg|max:2048',
             'rate'        => 'required',
             'price'       => 'required|numeric',

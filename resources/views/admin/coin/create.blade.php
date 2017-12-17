@@ -1,5 +1,5 @@
 @extends('admin.layout.master')
-@section('title', 'Manager Coin')
+@section('title', 'Quản lý coin')
 @section('content')
 <!-- Content Header (Page header) -->
 <section class="content-header">
@@ -9,7 +9,7 @@
     <ol class="breadcrumb">
         <li><a href="#">Home</a></li>
         <li><a href="#">Coin</a></li>
-        <li class="active">Tạo mới</li>
+        <li class="active">Tạo mới coin</li>
     </ol>
 </section>
 
@@ -39,6 +39,14 @@
                         <div class="form-group">
                             <label>Giá</label>
                             <input type="number" name="price" class="form-control" placeholder="Nhập giá">
+                        </div>
+                        <div class="form-group">
+                            <label>Thể loại</label>
+                            <select class="form-control" name="category_coin_id">
+                                @foreach($categories as $category)
+                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                @endforeach
+                            </select>
                         </div>
 
                         <!-- Hype -->

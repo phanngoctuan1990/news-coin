@@ -80,10 +80,6 @@ class AuthController extends Controller
      */
     public function authenticated($request, $user)
     {
-        if ($user->is_admin) {
-            return redirect()->route('admin.dashboard');
-        }
-        Auth::logout();
-        return redirect()->back();
+        return redirect()->route('admin.dashboard');
     }
 }

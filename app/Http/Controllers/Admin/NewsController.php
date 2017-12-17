@@ -105,6 +105,8 @@ class NewsController extends Controller
     /**
      * Update status of new
      *
+     * @param int $id New id
+     *
      * @return void
      */
     public function updateStatus($id)
