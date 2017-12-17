@@ -18,6 +18,7 @@ class CreateCoinTable extends Migration
                 $table->string('name');
                 $table->string('thumbnail');
                 $table->float('rate');
+                $table->tinyInteger('is_publish')->default(0)->comment('0 is not publish yet, 1 is published');
                 $table->tinyInteger('hype')->comment('0 is very low, 1 is low, 2 is mid, 3 is high, 4 is very high');
                 $table->tinyInteger('scam')->comment('0 is very low, 1 is low, 2 is mid, 3 is high, 4 is very high');
                 $table->tinyInteger('moom')->comment('0 is very low, 1 is low, 2 is mid, 3 is high, 4 is very high');
@@ -26,6 +27,7 @@ class CreateCoinTable extends Migration
                 $table->tinyInteger('stage')->comment('0 is ended, 1 is exchange, 2 is ico, 3 is ico today, 4 is scam');
                 $table->decimal('price', 8, 2);
                 $table->string('round');
+                $table->integer('category_coin_id')->unsigned();
                 $table->timestamps();
             });
         }

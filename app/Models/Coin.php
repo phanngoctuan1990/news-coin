@@ -18,6 +18,8 @@ class Coin extends Eloquent
 	const TYPE_EXCHANGE = 1;
 	const TYPE_ICO_TODAY = 3;
 
+    const TYPE_PUBLISH = 1;
+
     protected $table = 'coin';
 
     protected $fillable = [
@@ -29,6 +31,8 @@ class Coin extends Eloquent
         'moom',
         'start_date',
         'end_date',
+        'category_coin_id',
+        'is_publish',
         'stage',
         'price',
         'round',

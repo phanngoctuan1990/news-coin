@@ -1,5 +1,5 @@
 @extends('admin.layout.master')
-@section('title', 'Manager User')
+@section('title', 'Quản lý tài khoản')
 @section('content')
 <!-- Content Header (Page header) -->
 <section class="content-header">
@@ -8,7 +8,7 @@
     </h1>
     <ol class="breadcrumb">
         <li><a href="#">Admin</a></li>
-        <li><a href="#">Người dùng</a></li>
+        <li><a href="#">Tài khoản</a></li>
         <li class="active">Tạo tài khoản</li>
     </ol>
 </section>

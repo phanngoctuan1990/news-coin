@@ -1,15 +1,15 @@
 @extends('admin.layout.master')
-@section('title', 'Quản lý coin')
+@section('title', 'Quản lý thể loại coin')
 @section('content')
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
-        Danh sách coin
+        Danh sách thể loại coin
     </h1>
     <ol class="breadcrumb">
         <li><a href="#">Home</a></li>
-        <li><a href="#">Coin</a></li>
-        <li class="active">Danh sách coin</li>
+        <li><a href="#">Thể loại coin</a></li>
+        <li class="active">Danh sách thể loại coin</li>
     </ol>
 </section>
 
@@ -19,20 +19,11 @@
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-body">
-                    <table id="coins" class="table table-bordered table-striped">
+                    <table id="category-coins" class="table table-bordered table-striped">
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Tiêu đề</th>
-                                <th>Thumbnail</th>
-                                <th>Rate</th>
-                                <th>Hype</th>
-                                <th>Scam</th>
-                                <th>Moom</th>
-                                <th>Ngày bắt đầu</th>
-                                <th>Ngày kết thúc</th>
-                                <th>Trạng thái</th>
-                                <th>Giá</th>
+                                <th>Tên thể loại</th>
                                 <th>Tác vụ</th>
                             </tr>
                         </thead>

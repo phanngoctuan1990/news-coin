@@ -1,15 +1,15 @@
 @extends('admin.layout.master')
-@section('title', 'Manager User')
+@section('title', 'Quản lý tài khoản')
 @section('content')
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
-        Danh sách Users
+        Danh sách tài khoản
     </h1>
     <ol class="breadcrumb">
         <li><a href="#">Admin</a></li>
-        <li><a href="#">Users</a></li>
-        <li class="active">Danh sách users</li>
+        <li><a href="#">Tài khoản</a></li>
+        <li class="active">Danh sách tài khoản</li>
     </ol>
 </section>
 

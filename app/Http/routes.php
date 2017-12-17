@@ -19,17 +19,15 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::group(['middleware' => 'auth'], function () {
+        
+        // Dasboard
         Route::get('/dashboard', ['as' => 'admin.dashboard', function () {
                 return view('admin.layout.dashboard');
             }]);
 
         // User
-        Route::get('/user', ['as' => 'admin.user.index', function () {
-                return view('admin.user.index');
-            }]);
-        Route::get('/user/create', ['as' => 'admin.user.create', function () {
-                return view('admin.user.create');
-            }]);
+        Route::get('/user/datatables', 'UserController@datatables');
+        Route::resource('/user', 'UserController');
 
         // News
         Route::get('/news/datatables', 'NewsController@datatables');
@@ -42,9 +40,13 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
         // Coin
         Route::get('/coin/datatables', 'CoinController@datatables');
         Route::resource('/coin', 'CoinController');
+        Route::get('/coin/update-status/{id}', [
+            'as' => 'admin.coin.updateStatus',
+            'uses' => 'CoinController@updateStatus'
+        ]);
 
-        //User
-        Route::get('/user/datatables', 'UserController@datatables');
-        Route::resource('/user', 'UserController');
+        // Category coin
+        Route::get('/category-coin/datatables', 'CategoryController@datatables');
+        Route::resource('/category-coin', 'CategoryController');
     });
 });

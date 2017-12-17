@@ -3,7 +3,7 @@
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
         <ul class="sidebar-menu" data-widget="tree">
-            <li class="header">MAIN NAVIGATION</li>
+            <li class="header">DANH MỤC CHÍNH</li>
             <li class="{{ areActiveRoutes(['admin.dashboard']) }}">
                 <a href="{{ route('admin.dashboard') }}"><span>Dashboard</span></a>
             </li>
@@ -27,8 +27,8 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="{{ areActiveRoutes(['admin.news.index']) }}"><a href="{{ route('admin.news.index') }}"><i class="fa fa-circle-o"></i> Danh sách bài viết</a></li>
-                    <li class="{{ areActiveRoutes(['admin.news.create']) }}"><a href="{{ route('admin.news.create') }}"><i class="fa fa-circle-o"></i> Tạo bài viết</a></li>
+                    <li class="{{ areActiveRoutes(['admin.news.index']) }}"><a href="{{ route('admin.news.index') }}"><i class="fa fa-circle-o"></i> Danh sách tin tức</a></li>
+                    <li class="{{ areActiveRoutes(['admin.news.create']) }}"><a href="{{ route('admin.news.create') }}"><i class="fa fa-circle-o"></i> Tạo tin tức</a></li>
                 </ul>
             </li>
             <li class="treeview {{ areActiveRoutes(['admin.coin.index', 'admin.coin.create']) }}">
@@ -41,6 +41,18 @@
                 <ul class="treeview-menu">
                     <li class="{{ areActiveRoutes(['admin.coin.index']) }}"><a href="{{ route('admin.coin.index') }}"><i class="fa fa-circle-o"></i> Danh sách Coin</a></li>
                     <li class="{{ areActiveRoutes(['admin.coin.create']) }}"><a href="{{ route('admin.coin.create') }}"><i class="fa fa-circle-o"></i> Tạo Coin</a></li>
+                </ul>
+            </li>
+            <li class="treeview {{ areActiveRoutes(['admin.category-coin.index', 'admin.category-coin.create']) }}">
+                <a href="#">
+                    <span>Thể loại Coin</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="{{ areActiveRoutes(['admin.category-coin.index']) }}"><a href="{{ route('admin.category-coin.index') }}"><i class="fa fa-circle-o"></i> Danh sách</a></li>
+                    <li class="{{ areActiveRoutes(['admin.category-coin.create']) }}"><a href="{{ route('admin.category-coin.create') }}"><i class="fa fa-circle-o"></i> Tạo mới</a></li>
                 </ul>
             </li>		
         </ul>

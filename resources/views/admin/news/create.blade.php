@@ -1,14 +1,14 @@
 @extends('admin.layout.master')
-@section('title', 'Manager News')
+@section('title', 'Quản lý tin tức')
 @section('content')
 <section class="content-header">
     <h1>
-        Tạo bài viết
+        Tạo tin tức
     </h1>
     <ol class="breadcrumb">
         <li><a href="#">Admin</a></li>
-        <li><a href="#">Bài viết</a></li>
-        <li class="active">Tạo bài viết</li>
+        <li><a href="#">Tin tức</a></li>
+        <li class="active">Tạo tin tức</li>
     </ol>
 </section>
 <section class="content">

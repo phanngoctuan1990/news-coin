@@ -77,6 +77,7 @@
         <script src="{!! asset('assets/js/news.js') !!}"></script>
         <script src="{!! asset('assets/js/coin.js') !!}"></script>
         <script src="{!! asset('assets/js/user.js') !!}"></script>
+        <script src="{!! asset('assets/js/category-coin.js') !!}"></script>
         <!-- page script -->
         @yield('script')
     </body>
