@@ -7,9 +7,7 @@
             errorClass: 'help-block error-help-block',
 
             errorPlacement: function(error, element) {
-                if (element.hasClass('invisible')) {
-                    element.parent().append(error);
-                } else if (element.parent('.input-group').length ||
+                if (element.parent('.input-group').length ||
                     element.prop('type') === 'checkbox' || element.prop('type') === 'radio') {
                     element.parent().parent().append(error);
                     // else just place the validation message immediatly after the input
@@ -18,7 +16,7 @@
                 }
             },
             highlight: function(element) {
-                $(element).closest('.form-group').addClass('has-error'); // add the Bootstrap error class to the control group
+                $(element).parents('.form-group').addClass('has-error'); // add the Bootstrap error class to the control group
             },
 
             <?php if (isset($validator['ignore']) && is_string($validator['ignore'])): ?>
