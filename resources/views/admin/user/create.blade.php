@@ -23,31 +23,31 @@
                     <div class="box-body">
                         <div class="form-group">
                             <label for="fullName">Tên</label>
-                            <input type="text" name="full_name" class="form-control" id="exampleInputName" placeholder="Nhập tên">
+                            <input type="text" name="full_name" class="form-control" id="id-inputName" placeholder="Nhập tên">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email</label>
-                            <input type="email" name="email" class="form-control" id="exampleInputEmail" placeholder="Nhập email">
+                            <input type="email" name="email" class="form-control" id="id-inputEmail" placeholder="Nhập email">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Password</label>
-                            <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Nhập password">
+                            <input type="password" name="password" class="form-control" id="id-inputPassword1" placeholder="Nhập password">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword2">Nhập lại Password</label>
-                            <input type="password_confirm" name="password_confirmation" class="form-control" id="exampleInputPassword2" placeholder="Nhập password">
+                            <input type="password_confirm" name="password_confirmation" class="form-control" id="id-inputPassword2" placeholder="Nhập password">
                         </div>
                         <div class="checkbox">
-                            <label>
+                            <label class="cls-checkbox">
                                 <input name="role_id[]" type="checkbox" value="{{ App\Models\Role::POST_NEWS }}"> Đăng bài viết
                             </label>
-                            <label>
+                            <label class="cls-checkbox">
                                 <input name="role_id[]" type="checkbox" value="{{ App\Models\Role::REVIEW_NEWS }}"> Review bài viết
-                            </label>
-                            <label>
+                            </label >
+                            <label class="cls-checkbox">
                                 <input name="role_id[]" type="checkbox" value="{{ App\Models\Role::POST_COIN }}"> Đăng coin
                             </label>
-                            <label>
+                            <label class="cls-checkbox">
                                 <input name="role_id[]" type="checkbox" value="{{ App\Models\Role::REVIEW_COIN }}"> Review coin
                             </label>
                         </div>
@@ -59,4 +59,7 @@
             </div>
     </div>
 </section>
+@endsection
+@section('script')
+{!! JsValidator::formRequest('App\Http\Requests\CreateUserRequest') !!}
 @endsection
