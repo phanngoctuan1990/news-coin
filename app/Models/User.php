@@ -2,12 +2,14 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model as Eloquent;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Models\UserRole;
 
-class User extends Eloquent {
+class User extends Authenticatable {
 
     protected $table = 'users';
+
+    const TYPE_ADMIN = 1;
 
     /**
      * The attributes that are mass assignable.
@@ -18,6 +20,7 @@ class User extends Eloquent {
         'full_name',
         'email',
         'password',
+        'is_admin',
     ];
 
     /**
@@ -26,5 +29,4 @@ class User extends Eloquent {
     public function userRoles() {
         return $this->hasMany(UserRole::class, 'user_id');
     }
-
 }

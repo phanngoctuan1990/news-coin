@@ -28,4 +28,16 @@ class CreateUserRequest extends Request
             'role_id'               => 'required',
         ];
     }
+
+    /**
+     * Determine message.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'full_name.required'     => 'Trường tên bắt buộc nhập.',
+        ];
+    }
 }

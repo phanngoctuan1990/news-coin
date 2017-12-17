@@ -18,7 +18,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="box box-primary">
-                <form role="form" action="{{ route('admin.user.store') }}" method="POST" enctype="multipart/form-data">
+                <form role="form" id="form-create-user" action="{{ route('admin.user.store') }}" method="POST" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="box-body">
                         <div class="form-group">
@@ -37,7 +37,7 @@
                             <label for="exampleInputPassword2">Nhập lại Password</label>
                             <input type="password_confirm" name="password_confirmation" class="form-control" id="id-inputPassword2" placeholder="Nhập password">
                         </div>
-                        <div class="checkbox">
+                        <div class="form-group checkbox">
                             <label class="cls-checkbox">
                                 <input name="role_id[]" type="checkbox" value="{{ App\Models\Role::POST_NEWS }}"> Đăng bài viết
                             </label>
@@ -61,5 +61,5 @@
 </section>
 @endsection
 @section('script')
-{!! JsValidator::formRequest('App\Http\Requests\CreateUserRequest') !!}
+{!! JsValidator::formRequest('App\Http\Requests\CreateUserRequest', '#form-create-user') !!}
 @endsection

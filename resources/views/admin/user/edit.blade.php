@@ -18,7 +18,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="box box-primary">
-                <form role="form" action="{{ route('admin.user.update', $user->id) }}" method="POST" enctype="multipart/form-data">
+                <form role="form" id="form-update-user" action="{{ route('admin.user.update', $user->id) }}" method="POST" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     {{ method_field('PUT') }}
                     <div class="box-body">
@@ -44,7 +44,7 @@
                                 $userRoles[] = $value['role_id'];
                             }
                         ?>
-                        <div class="checkbox">
+                        <div class="form-group checkbox">
                             <label class="cls-checkbox">
                                 <input name="role_id[]" type="checkbox" value="{{ App\Models\Role::POST_NEWS }}" {{in_array(App\Models\Role::POST_NEWS, $userRoles) ? 'checked': ''}}> Đăng bài viết
                             </label>
@@ -69,5 +69,5 @@
 </section>
 @endsection
 @section('script')
-{!! JsValidator::formRequest('App\Http\Requests\UpdateUserRequest') !!}
+{!! JsValidator::formRequest('App\Http\Requests\UpdateUserRequest', '#form-update-user') !!}
 @endsection
