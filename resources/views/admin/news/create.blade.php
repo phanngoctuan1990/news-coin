@@ -6,8 +6,8 @@
         Tạo tin tức
     </h1>
     <ol class="breadcrumb">
-        <li><a href="#">Admin</a></li>
-        <li><a href="#">Tin tức</a></li>
+        <li><a href="{{ route('admin.dashboard') }}">Trang chủ</a></li>
+        <li><a href="{{ route('admin.news.index') }}">Tin tức</a></li>
         <li class="active">Tạo tin tức</li>
     </ol>
 </section>
@@ -29,7 +29,7 @@
                         </div>
                     </div>
                     <div class="box-footer">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary">Tạo mới</button>
                     </div>
                 </form>
             </div>

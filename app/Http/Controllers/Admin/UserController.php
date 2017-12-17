@@ -40,7 +40,7 @@ class UserController extends Controller {
         $user = new User;
         $user->full_name = $data['full_name'];
         $user->email = $data['email'];
-        $user->password = md5($data['password']);
+        $user->password = bcrypt($data['password']);
         $user->save();
         $userRole = array();
         $now = \Carbon\Carbon::now();
@@ -64,9 +64,13 @@ class UserController extends Controller {
      * 
      * @return void
      */
-    public function edit($id) {
+    public function show($id) {
         $user = User::with(['userRoles'])->find($id);
-        return view('admin.user.edit', compact('user'));
+        if ($user->is_admin && !auth()->user()->is_admin) {
+            flash('Không thể xem chi tiết tài khoản admin', 'warning');
+            return redirect()->back();
+        }
+        return view('admin.user.show', compact('user'));
     }
 
     /**
@@ -80,25 +84,31 @@ class UserController extends Controller {
     public function update(UpdateUserRequest $request, $id) {
         $data = $request->all();
         $user = User::find($id);
+        if ($user->is_admin && !auth()->user()->is_admin) {
+            flash('Không thể thay đổi tài khoản admin', 'warning');
+            return redirect()->back();
+        }
         $user->full_name = $data['full_name'];
         $user->email = $data['email'];
-        $user->password = md5($data['password']);
+        $user->password = bcrypt($data['password']);
         $user->save();
-        $userRoles = [];
-        foreach ($user->userRoles as $value) {
-            $userRoles[] = $value['id'];
+        if (!$user->is_admin) {
+            $userRoles = [];
+            foreach ($user->userRoles as $value) {
+                $userRoles[] = $value['id'];
+            }
+            UserRole::destroy($userRoles);
+            $now = \Carbon\Carbon::now();
+            foreach ($data['role_id'] as $roleId) {
+                $userRole[] = [
+                    'role_id' => $roleId,
+                    'user_id' => $user->id,
+                    'created_at' => $now,
+                    'updated_at' => $now
+                ];
+            }
+            \DB::table('user_role')->insert($userRole);
         }
-        UserRole::destroy($userRoles);
-        $now = \Carbon\Carbon::now();
-        foreach ($data['role_id'] as $roleId) {
-            $userRole[] = [
-                'role_id' => $roleId,
-                'user_id' => $user->id,
-                'created_at' => $now,
-                'updated_at' => $now
-            ];
-        }
-        \DB::table('user_role')->insert($userRole);
         flash('Cập nhật tài khoản thành công', 'success');
         return redirect()->route('admin.user.index');
     }
@@ -112,6 +122,10 @@ class UserController extends Controller {
      */
     public function destroy($id) {
         $user = User::find($id);
+        if ($user->is_admin) {
+            flash('Không thể xoá tài khoản admin', 'warning');
+            return redirect()->back();
+        }
         $user->delete();
         flash('Xoá tài khoản thành công', 'success');
         return redirect()->route('admin.user.index');

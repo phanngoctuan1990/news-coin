@@ -2,6 +2,7 @@ $(function () {
     $('#category-coins').DataTable({
         processing: true,
         serverSide: true,
+        responsive: true,
         ajax: '/admin/category-coin/datatables',
         columns: [
             {data: 'id', name: 'id'},

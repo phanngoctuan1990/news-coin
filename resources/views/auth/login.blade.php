@@ -27,7 +27,7 @@
         <div class="row">
             <div class="col-xs-8">
                 <div class="checkbox">
-                <label><input type="checkbox"> Ghi nhớ</label>
+                <label><input type="checkbox" value="remember"> Ghi nhớ</label>
                 </div>
             </div>
             <!-- /.col -->

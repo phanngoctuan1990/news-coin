@@ -2,6 +2,7 @@ $(function () {
     $('#news').DataTable({
         processing: true,
         serverSide: true,
+        responsive: true,
         ajax: '/admin/news/datatables',
         columns: [
             {data: 'id', name: 'id'},

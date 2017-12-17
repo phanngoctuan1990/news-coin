@@ -6,8 +6,8 @@
         Chi tiết coin
     </h1>
     <ol class="breadcrumb">
-        <li><a href="#">Admin</a></li>
-        <li><a href="#">Coin</a></li>
+        <li><a href="{{ route('admin.dashboard') }}">Trang chủ</a></li>
+        <li><a href="{{ route('admin.coin.index') }}">Coin</a></li>
         <li class="active">Chi tiết coin</li>
     </ol>
 </section>

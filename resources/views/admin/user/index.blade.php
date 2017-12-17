@@ -7,8 +7,8 @@
         Danh sách tài khoản
     </h1>
     <ol class="breadcrumb">
-        <li><a href="#">Admin</a></li>
-        <li><a href="#">Tài khoản</a></li>
+        <li><a href="{{ route('admin.dashboard') }}">Trang chủ</a></li>
+        <li><a href="{{ route('admin.user.index') }}">Tài khoản</a></li>
         <li class="active">Danh sách tài khoản</li>
     </ol>
 </section>
@@ -18,7 +18,7 @@
     <div class="row">
         <div class="col-xs-12">
             <div class="box">
-                <div class="box-body">
+                <div class="box-body table-responsive">
                     <table id="id-users" class="table table-bordered table-striped">
                         <thead>
                             <tr>

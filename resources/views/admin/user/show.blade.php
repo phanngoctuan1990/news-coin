@@ -4,12 +4,12 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
-        Chỉnh sửa tài khoản
+        Chi tiết tài khoản
     </h1>
     <ol class="breadcrumb">
-        <li><a href="#">Admin</a></li>
-        <li><a href="#">Tài khoản</a></li>
-        <li class="active">Sửa tài khoản</li>
+        <li><a href="{{ route('admin.dashboard') }}">Trang chủ</a></li>
+        <li><a href="{{ route('admin.user.index') }}">Tài khoản</a></li>
+        <li class="active">Chi tiết tài khoản</li>
     </ol>
 </section>
 
@@ -30,6 +30,7 @@
                             <label for="exampleInputEmail1">Email</label>
                             <input type="email" name="email" value="{{ $user->email }}" class="form-control" id="id-inputEmail" placeholder="Nhập email">
                         </div>
+                        @if(auth()->user()->id == $user->id)
                         <div class="form-group">
                             <label for="exampleInputPassword1">Password</label>
                             <input type="password" name="password" class="form-control" id="id-inputPassword1" placeholder="Nhập password">
@@ -38,6 +39,7 @@
                             <label for="exampleInputPassword2">Nhập lại Password</label>
                             <input type="password" name="password_confirmation" class="form-control" id="id-inputPassword2" placeholder="Nhập password">
                         </div>
+                        @endif
                         <?php
                             $userRoles = [];
                             foreach ($user->userRoles as $value) {
@@ -58,9 +60,11 @@
                                 <input name="role_id[]" type="checkbox" value="{{ App\Models\Role::REVIEW_COIN }}" {{in_array(App\Models\Role::REVIEW_COIN, $userRoles) ? 'checked': ''}}> Review coin
                             </label>
                         </div>
-
                         <div class="box-footer">
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <a href="{{ route('admin.user.index') }}" class="btn btn-danger btn-sm">Thoát</a>
+                            @if(auth()->user()->is_admin || auth()->user()->id == $user->id)
+                            <button type="submit" class="btn btn-primary btn-sm">Sửa</button>
+                            @endif
                         </div>
                 </form>
             </div>

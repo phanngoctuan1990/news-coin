@@ -7,8 +7,8 @@
         Danh sách tin tức
     </h1>
     <ol class="breadcrumb">
-        <li><a href="#">Admin</a></li>
-        <li><a href="#">Tin tức</a></li>
+        <li><a href="{{ route('admin.dashboard') }}">Trang chủ</a></li>
+        <li><a href="{{ route('admin.news.index') }}">Tin tức</a></li>
         <li class="active">Danh sách tin tức</li>
     </ol>
 </section>
@@ -18,7 +18,7 @@
     <div class="row">
         <div class="col-xs-12">
             <div class="box">
-                <div class="box-body">
+                <div class="box-body table-responsive">
                     <table id="news" class="table table-bordered table-striped">
                         <thead>
                             <tr>
