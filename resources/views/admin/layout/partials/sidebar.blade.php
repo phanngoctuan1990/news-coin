@@ -5,10 +5,14 @@
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">DANH MỤC CHÍNH</li>
             <li class="{{ areActiveRoutes(['admin.dashboard']) }}">
-                <a href="{{ route('admin.dashboard') }}"><span>Dashboard</span></a>
+                <a href="{{ route('admin.dashboard') }}">
+                    <i class="fa fa-dashboard"></i>
+                    <span>Trang chủ</span>
+                </a>
             </li>
             <li class="treeview {{ areActiveRoutes(['admin.user.index', 'admin.user.create']) }}">
                 <a href="#">
+                    <i class="fa fa-user"></i>
                     <span>Tài khoản</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
@@ -21,6 +25,7 @@
             </li>
             <li class="treeview {{ areActiveRoutes(['admin.news.index', 'admin.news.create']) }}">
                 <a href="#">
+                    <i class="fa fa-edit"></i>
                     <span>Tin tức</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
@@ -33,6 +38,7 @@
             </li>
             <li class="treeview {{ areActiveRoutes(['admin.coin.index', 'admin.coin.create']) }}">
                 <a href="#">
+                    <i class="fa fa-dollar"></i>
                     <span>Coin</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
@@ -45,6 +51,7 @@
             </li>
             <li class="treeview {{ areActiveRoutes(['admin.category-coin.index', 'admin.category-coin.create']) }}">
                 <a href="#">
+                    <i class="fa fa-book"></i>
                     <span>Thể loại Coin</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>

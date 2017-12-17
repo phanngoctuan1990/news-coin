@@ -7,8 +7,8 @@
         Danh sách thể loại coin
     </h1>
     <ol class="breadcrumb">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Thể loại coin</a></li>
+        <li><a href="{{ route('admin.dashboard') }}">Trang chủ</a></li>
+        <li><a href="{{ route('admin.category-coin.index') }}">Thể loại coin</a></li>
         <li class="active">Danh sách thể loại coin</li>
     </ol>
 </section>
@@ -18,7 +18,7 @@
     <div class="row">
         <div class="col-xs-12">
             <div class="box">
-                <div class="box-body">
+                <div class="box-body table-responsive">
                     <table id="category-coins" class="table table-bordered table-striped">
                         <thead>
                             <tr>

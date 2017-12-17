@@ -7,8 +7,8 @@
         Tạo tài khoản
     </h1>
     <ol class="breadcrumb">
-        <li><a href="#">Admin</a></li>
-        <li><a href="#">Tài khoản</a></li>
+        <li><a href="{{ route('admin.dashboard') }}">Trang chủ</a></li>
+        <li><a href="{{ route('admin.user.index') }}">Tài khoản</a></li>
         <li class="active">Tạo tài khoản</li>
     </ol>
 </section>
@@ -53,7 +53,7 @@
                         </div>
 
                         <div class="box-footer">
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary">Tạo mới</button>
                         </div>
                 </form>
             </div>

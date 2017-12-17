@@ -7,8 +7,8 @@
         Tạo mới coin
     </h1>
     <ol class="breadcrumb">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Coin</a></li>
+        <li><a href="{{ route('admin.dashboard') }}">Trang chủ</a></li>
+        <li><a href="{{ route('admin.coin.index') }}">Coin</a></li>
         <li class="active">Tạo mới coin</li>
     </ol>
 </section>

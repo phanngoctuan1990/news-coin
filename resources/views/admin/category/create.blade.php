@@ -7,8 +7,8 @@
         Tạo mới thể loại coin
     </h1>
     <ol class="breadcrumb">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Thể loại coin</a></li>
+        <li><a href="{{ route('admin.dashboard') }}">Trang chủ</a></li>
+        <li><a href="{{ route('admin.category-coin.index') }}">Thể loại coin</a></li>
         <li class="active">Tạo mới</li>
     </ol>
 </section>

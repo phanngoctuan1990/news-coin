@@ -14,8 +14,8 @@ class CreateForeignUserRoleTable extends Migration
     {
         if (Schema::hasTable('user_role')) {
             Schema::table('user_role', function (Blueprint $table) {
-                $table->foreign('user_id', 'fk_user_role_user_id')->references('id')->on('users');
-                $table->foreign('role_id', 'fk_user_role_role_id')->references('id')->on('role');
+                $table->foreign('user_id', 'fk_user_role_user_id')->references('id')->on('users')->onDelete('cascade');
+                $table->foreign('role_id', 'fk_user_role_role_id')->references('id')->on('role')->onDelete('cascade');
             });
         }
     }
