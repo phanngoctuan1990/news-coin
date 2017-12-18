@@ -46,20 +46,22 @@
                                 $userRoles[] = $value['role_id'];
                             }
                         ?>
+                        @if(auth()->user()->is_admin)
                         <div class="form-group checkbox">
                             <label class="cls-checkbox">
-                                <input name="role_id[]" type="checkbox" value="{{ App\Models\Role::POST_NEWS }}" {{in_array(App\Models\Role::POST_NEWS, $userRoles) ? 'checked': ''}}> Đăng bài viết
+                                <input name="role_id[]" {{ auth()->user()->id == $user->id ? 'disabled' : '' }} type="checkbox" value="{{ App\Models\Role::POST_NEWS }}" {{in_array(App\Models\Role::POST_NEWS, $userRoles) ? 'checked': ''}}> Đăng bài viết
                             </label>
                             <label class="cls-checkbox">
-                                <input name="role_id[]" type="checkbox" value="{{ App\Models\Role::REVIEW_NEWS }}" {{in_array(App\Models\Role::REVIEW_NEWS, $userRoles) ? 'checked': ''}}> Review bài viết
+                                <input name="role_id[]" {{ auth()->user()->id == $user->id ? 'disabled' : '' }} type="checkbox" value="{{ App\Models\Role::REVIEW_NEWS }}" {{in_array(App\Models\Role::REVIEW_NEWS, $userRoles) ? 'checked': ''}}> Review bài viết
                             </label>
                             <label class="cls-checkbox">
-                                <input name="role_id[]" type="checkbox" value="{{ App\Models\Role::POST_COIN }}" {{in_array(App\Models\Role::POST_COIN, $userRoles) ? 'checked': ''}}> Đăng coin
+                                <input name="role_id[]" {{ auth()->user()->id == $user->id ? 'disabled' : '' }} type="checkbox" value="{{ App\Models\Role::POST_COIN }}" {{in_array(App\Models\Role::POST_COIN, $userRoles) ? 'checked': ''}}> Đăng coin
                             </label>
                             <label class="cls-checkbox">
-                                <input name="role_id[]" type="checkbox" value="{{ App\Models\Role::REVIEW_COIN }}" {{in_array(App\Models\Role::REVIEW_COIN, $userRoles) ? 'checked': ''}}> Review coin
+                                <input name="role_id[]" {{ auth()->user()->id == $user->id ? 'disabled' : '' }} type="checkbox" value="{{ App\Models\Role::REVIEW_COIN }}" {{in_array(App\Models\Role::REVIEW_COIN, $userRoles) ? 'checked': ''}}> Review coin
                             </label>
                         </div>
+                        @endif
                         <div class="box-footer">
                             <a href="{{ route('admin.user.index') }}" class="btn btn-danger btn-sm">Thoát</a>
                             @if(auth()->user()->is_admin || auth()->user()->id == $user->id)
