@@ -35,7 +35,7 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword2">Nhập lại Password</label>
-                            <input type="password_confirm" name="password_confirmation" class="form-control" id="id-inputPassword2" placeholder="Nhập password">
+                            <input type="password" name="password_confirmation" class="form-control" id="id-inputPassword2" placeholder="Nhập password">
                         </div>
                         <div class="form-group checkbox">
                             <label class="cls-checkbox">

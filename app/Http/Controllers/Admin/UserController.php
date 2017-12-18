@@ -90,7 +90,9 @@ class UserController extends Controller {
         }
         $user->full_name = $data['full_name'];
         $user->email = $data['email'];
-        $user->password = bcrypt($data['password']);
+        if (auth()->user()->is_admin && auth()->user()->id == $user->id) {
+            $user->password = bcrypt($data['password']);
+        }
         $user->save();
         if (!$user->is_admin) {
             $userRoles = [];
