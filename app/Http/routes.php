@@ -14,7 +14,7 @@
 Route::auth();
 
 Route::get('/', function () {
-    return view('auth.login');
+    return view('frontend.home.index');
 });
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
@@ -22,8 +22,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
         
         // Dasboard
         Route::get('/dashboard', ['as' => 'admin.dashboard', function () {
-                return view('admin.layout.dashboard');
-            }]);
+            return view('admin.layout.dashboard');
+        }]);
 
         // User
         Route::get('/user/datatables', 'UserController@datatables');
