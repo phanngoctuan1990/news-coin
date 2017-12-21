@@ -42,9 +42,9 @@
                         @endif
                         <?php
                             $userRoles = [];
-                            foreach ($user->userRoles as $value) {
-                                $userRoles[] = $value['role_id'];
-                            }
+                        foreach ($user->userRoles as $value) {
+                            $userRoles[] = $value['role_id'];
+                        }
                         ?>
                         @if(auth()->user()->is_admin)
                         <div class="form-group checkbox">

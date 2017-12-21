@@ -5,7 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model as Eloquent;
 use App\Models\User;
 
-class UserRole extends Eloquent {
+class UserRole extends Eloquent
+{
 
     protected $table = 'user_role';
 
@@ -21,9 +22,11 @@ class UserRole extends Eloquent {
 
     /**
      * Get user belongs to role.
+     *
+     * @return mixed
      */
-    public function users() {
+    public function users()
+    {
         return $this->belongsTo(User::class, 'user_id');
     }
-
 }

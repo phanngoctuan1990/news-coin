@@ -6,17 +6,17 @@ use Illuminate\Database\Eloquent\Model as Eloquent;
 
 class Coin extends Eloquent
 {
-	const TYPE_LOW = 1;
+    const TYPE_LOW = 1;
     const TYPE_HIGH = 3;
-	const TYPE_MEDIUM = 2;
-	const TYPE_VERY_LOW = 0;
-	const TYPE_VERY_HIGH = 4;
+    const TYPE_MEDIUM = 2;
+    const TYPE_VERY_LOW = 0;
+    const TYPE_VERY_HIGH = 4;
 
-	const TYPE_ICO = 2;
-	const TYPE_SCAM = 4;
-	const TYPE_ENDED = 0;
-	const TYPE_EXCHANGE = 1;
-	const TYPE_ICO_TODAY = 3;
+    const TYPE_ICO = 2;
+    const TYPE_SCAM = 4;
+    const TYPE_ENDED = 0;
+    const TYPE_EXCHANGE = 1;
+    const TYPE_ICO_TODAY = 3;
 
     const TYPE_PUBLISH = 1;
 

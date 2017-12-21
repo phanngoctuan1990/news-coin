@@ -4,7 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model as Eloquent;
 
-class Role extends Eloquent {
+class Role extends Eloquent
+{
 
     const POST_NEWS = 1;
     const REVIEW_NEWS = 2;
@@ -21,5 +22,4 @@ class Role extends Eloquent {
     protected $fillable = [
         'name',
     ];
-
 }
