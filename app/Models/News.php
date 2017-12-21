@@ -16,7 +16,7 @@ class News extends Eloquent
      * @var array
      */
     protected $fillable = [
-        'title', 
+        'title',
         'content',
     ];
 }

@@ -11,7 +11,7 @@ class NewsController extends Controller
     /**
      * Index
      *
-     * @return 
+     * @return void
      */
     public function index()
     {
@@ -19,7 +19,7 @@ class NewsController extends Controller
     }
     /**
      * Create
-     * 
+     *
      * @return void
      */
     public function create()
@@ -31,7 +31,7 @@ class NewsController extends Controller
      * Insert data
      *
      * @param CreateNewsRequest $request Request
-     * 
+     *
      * @return void
      */
     public function store(CreateNewsRequest $request)
@@ -49,7 +49,7 @@ class NewsController extends Controller
      * Show detail new
      *
      * @param int $id New id
-     * 
+     *
      * @return void
      */
     public function show($id)
@@ -61,9 +61,9 @@ class NewsController extends Controller
     /**
      * Update new
      *
-     * @param UpdateNewsRequest $request
-     * @param int $id New id
-     * 
+     * @param UpdateNewsRequest $request request
+     * @param int               $id      New id
+     *
      * @return void
      */
     public function update(UpdateNewsRequest $request, $id)

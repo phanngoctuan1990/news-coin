@@ -39,8 +39,8 @@ class CoinController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param UpdateCoinRequest request update
-     * @param int $id coin id
+     * @param UpdateCoinRequest $request request update
+     * @param int               $id      coin id
      *
      * @return \Illuminate\Http\Response
      */
@@ -133,7 +133,8 @@ class CoinController extends Controller
         $coin->price            = $data['price'];
         $coin->stage            = $data['stage'];
         $coin->start_date       = Carbon::parse($data['start_date'])->format('Y-m-d');
-        $coin->end_date         = Carbon::parse($data['end_date'])->format('Y-m-d');;
+        $coin->end_date         = Carbon::parse($data['end_date'])->format('Y-m-d');
+        ;
         $coin->round            = 'round';
 
         // upload image

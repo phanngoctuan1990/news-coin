@@ -5,7 +5,8 @@ namespace App\Models;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Models\UserRole;
 
-class User extends Authenticatable {
+class User extends Authenticatable
+{
 
     protected $table = 'users';
 
@@ -24,9 +25,12 @@ class User extends Authenticatable {
     ];
 
     /**
-     * Get role of user .
+     * Get role of user.
+     *
+     * @return mixed
      */
-    public function userRoles() {
+    public function userRoles()
+    {
         return $this->hasMany(UserRole::class, 'user_id');
     }
 }

@@ -8,23 +8,26 @@ use App\Models\User;
 use App\Http\Requests\UpdateUserRequest;
 use App\Models\UserRole;
 
-class UserController extends Controller {
+class UserController extends Controller
+{
 
     /**
      * Index
      *
-     * @return 
+     * @return void
      */
-    public function index() {
+    public function index()
+    {
         return view('admin.user.index');
     }
 
     /**
      * Create
-     * 
+     *
      * @return void
      */
-    public function create() {
+    public function create()
+    {
         return view('admin.user.create');
     }
 
@@ -32,10 +35,11 @@ class UserController extends Controller {
      * Insert data
      *
      * @param CreateUserRequest $request Request
-     * 
+     *
      * @return void
      */
-    public function store(CreateUserRequest $request) {
+    public function store(CreateUserRequest $request)
+    {
         $data = $request->all();
         $user = new User;
         $user->full_name = $data['full_name'];
@@ -61,10 +65,11 @@ class UserController extends Controller {
      * Show data edit user
      *
      * @param int $id User id
-     * 
+     *
      * @return void
      */
-    public function show($id) {
+    public function show($id)
+    {
         $user = User::with(['userRoles'])->find($id);
         if ($user->is_admin && !auth()->user()->is_admin) {
             flash('Không thể xem chi tiết tài khoản admin', 'warning');
@@ -76,12 +81,13 @@ class UserController extends Controller {
     /**
      * Update user
      *
-     * @param UpdateUserRequest $request
-     * @param int $id User id
-     * 
+     * @param UpdateUserRequest $request request
+     * @param int               $id      User id
+     *
      * @return void
      */
-    public function update(UpdateUserRequest $request, $id) {
+    public function update(UpdateUserRequest $request, $id)
+    {
         $data = $request->all();
         $user = User::find($id);
         if ($user->is_admin && !auth()->user()->is_admin) {
@@ -122,7 +128,8 @@ class UserController extends Controller {
      *
      * @return void
      */
-    public function destroy($id) {
+    public function destroy($id)
+    {
         $user = User::find($id);
         if ($user->is_admin) {
             flash('Không thể xoá tài khoản admin', 'warning');
@@ -138,10 +145,10 @@ class UserController extends Controller {
      *
      * @return void
      */
-    public function datatables() {
+    public function datatables()
+    {
         return \Datatables::of(User::query())
                         ->addColumn('action', 'admin.user.datatables.browser')
                         ->make(true);
     }
-
 }

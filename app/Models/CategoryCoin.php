@@ -18,8 +18,11 @@ class CategoryCoin extends Eloquent
 
     /**
      * Get category has many coin.
+     *
+     * @return mixed
      */
-    public function coins() {
+    public function coins()
+    {
         return $this->hasMany(Coin::class, 'category_coin_id');
     }
 
