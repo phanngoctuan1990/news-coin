@@ -1,0 +1,26 @@
+## Cấu hình cho máy ảo test
+machine:
+  pre:
+    - sudo apt-get update; USE_PRECOMPILE=true sudo -E circleci-install php 7.1.1
+  ## Cấu hình phiên bản php sử dụng
+  php:
+    version: 7.1.1
+  environment:
+    PATH: "${PATH}:${HOME}/.composer/vendor/bin"
+## Lệnh cài các thư viện cần thiết, import database mẫu, tạo file .env ...
+dependencies:
+  pre:
+    - echo "memory_limit = 512M" > $PHPENV_ROOT/versions/$(phpenv global)/etc/conf.d/memory.ini
+    - echo 'LoadModule php7_module /opt/circleci/php/7.1.1/usr/lib/apache2/modules/libphp7.so' | sudo tee /etc/apache2/mods-available/php7.load
+    - sudo cp /etc/apache2/mods-available/php5.conf /etc/apache2/mods-available/php7.conf
+    - sudo a2dismod php5
+    - sudo a2enmod php7
+## Cấu hình test
+test:
+  override:
+    # phpcs circleci status
+    - ./vendor/bin/phpcs -n --standard=phpcs.xml
+    # phpmd
+    - ./vendor/bin/phpmd app text phpmd.xml
+    # phpunit
+    - ./vendor/bin/phpunit
