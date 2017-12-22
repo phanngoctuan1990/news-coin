@@ -178,7 +178,7 @@ class CoinController extends Controller
                 return Coin::$convertCoinStage[$data->stage];
             })
             ->editColumn('price', function ($data) {
-                return '$' . $data->stage;
+                return '$' . round($data->price);
             })
             ->editColumn('start_date', function ($data) {
                 return Carbon::parse($data->start_date)->format('d-m-Y');
