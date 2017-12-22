@@ -1,11 +1,10 @@
 $(function () {
-    $('#coins').DataTable({
+    $('#coins-home').DataTable({
         processing: true,
         serverSide: true,
         responsive: true,
-        ajax: '/admin/coin/datatables',
+        ajax: '/home/coin/datatables',
         columns: [
-            {data: 'id', name: 'id'},
             {data: 'name', name: 'name'},
             {data: 'thumbnail', name: 'thumbnail', orderable: false, searchable: false},
             {data: 'rate', name: 'rate'},
@@ -16,7 +15,7 @@ $(function () {
             {data: 'end_date', name: 'end_date'},
             {data: 'stage', name: 'stage'},
             {data: 'price', name: 'price'},
-            {data: 'action', name: 'action', orderable: false, searchable: false}
+            {data: 'cate_name', name: 'cate_name'}
         ],
         "language": {
             "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Vietnamese.json",

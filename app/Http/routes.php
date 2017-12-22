@@ -13,10 +13,17 @@
 
 Route::auth();
 
-Route::get('/', function () {
-    return view('frontend.home.index');
+/**
+ * Front end
+ */
+Route::group(['namespace' => 'Frontend'], function () {
+    Route::get('/', ['as' => 'home.index', 'uses' => 'HomeController@index']);
+    Route::get('/home/coin/datatables', 'HomeController@datatables');
 });
 
+/**
+ * Back end
+ */
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::group(['middleware' => 'auth'], function () {
         

@@ -37,6 +37,9 @@
 	    <!-- DataTables -->
 	    <script src="{!! asset('assets/js/jquery.dataTables4.min.js') !!}"></script>
 	    <script src="{!! asset('assets/js/dataTables.bootstrap4.min.js') !!}"></script>
+
+	    <!-- Page script -->
+        <script src="{!! asset('assets/js/home.js') !!}"></script>
 	    @yield('script')
   	</body>
 </html>
