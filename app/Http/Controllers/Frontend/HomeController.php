@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use Carbon\Carbon;
 use App\Models\Coin;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
@@ -21,9 +22,11 @@ class HomeController extends Controller
     /**
      * Get list coin show datatables
      *
-     * @return void
+     * @param Request $request request
+     *
+     * @return \Illuminate\Http\Response
      */
-    public function datatables()
+    public function datatables(Request $request)
     {
         $columns = [
             'coin.name',
@@ -42,17 +45,17 @@ class HomeController extends Controller
         $coins = Coin::select($columns)
                 ->join('category_coin', 'category_coin.id', '=', 'coin.category_coin_id')
                 ->where('is_publish', Coin::TYPE_PUBLISH);
+        if ($request->stage != Coin::TYPE_ALL) {
+            $coins = $coins->where('stage', $request->stage);
+        }
 
         $result = \Datatables::of($coins)
             ->editColumn('name', function ($data) {
-                return htmlentities($data->name);
+                $url = asset('/images/coins/' . $data->thumbnail);
+                return '<img src="' . $url . '" border="0" width="40" align="center" /> ' . htmlentities($data->name);
             })
             ->editColumn('cate_name', function ($data) {
                 return htmlentities($data->cate_name);
-            })
-            ->editColumn('thumbnail', function ($data) {
-                $url = asset('/images/coins/' . $data->thumbnail);
-                return '<img src="' . $url . '" border="0" width="40" align="center" />';
             })
             ->editColumn('hype', function ($data) {
                 return Coin::$convertCoinType[$data->hype];
