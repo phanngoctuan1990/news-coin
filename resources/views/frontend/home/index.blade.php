@@ -1,23 +1,65 @@
 @extends('frontend.layout.master')
-@section('title', 'iDauTu.com')
 @section('content')
-<div class="box-body">
-	<table id="coins-home" class="table table-striped">
-		<thead>
-            <tr>
-                <th>Tên</th>
-                <th>Icon</th>
-                <th>Rate</th>
-                <th>Hype</th>
-                <th>Scam</th>
-                <th>Moom</th>
-                <th>Bắt đầu</th>
-                <th>Kết thúc</th>
-                <th>Trạng thái</th>
-                <th>Giá</th>
-                <th>Thể loại</th>
-            </tr>
-      </thead>
-  	</table>
+<div id="about" class="section md-padding">
+    <!-- Container -->
+    <div class="container">
+        <!-- Section header -->
+        <div class="section-header text-center">
+            <h2 class="title">Welcome to IDT Website</h2>
+        </div>
+        <!-- Filter -->
+        <div class="row sm-padding">
+            <!-- Right filter -->
+            <div class="col-lg-6">
+                
+            </div>
+            <!-- Right filter -->
+            <!-- Left filter -->
+            <div class="col-lg-6">
+                <ul class="sub-nav nav nav-pills navbar-right">
+                    <li role="presentation">
+                        <a href="#" class="coin-filter" value="{{ \App\Models\Coin::TYPE_ALL }}">All</a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#" class="coin-filter" value="{{ \App\Models\Coin::TYPE_ENDED }}">Ended</a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#" class="coin-filter" value="{{ \App\Models\Coin::TYPE_EXCHANGE }}">Exchange</a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#" class="coin-filter" value="{{ \App\Models\Coin::TYPE_ICO }}">ICO</a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#" class="coin-filter" value="{{ \App\Models\Coin::TYPE_ICO_TODAY }}">ICO Today</a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#" class="coin-filter" value="{{ \App\Models\Coin::TYPE_SCAM }}">Scam</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Left filter -->
+        </div>
+        <!-- Table -->
+        <div class="table-responsive">
+            <table class="table table-hover" id="coins-home">
+                <thead>
+                    <tr>
+                        <th>Tiêu đề</th>
+                        <th>Rate</th>
+                        <th>Hype</th>
+                        <th>Scam</th>
+                        <th>Moom</th>
+                        <th>Ngày bắt đầu</th>
+                        <th>Ngày kết thúc</th>
+                        <th>Trạng thái</th>
+                        <th>Giá</th>
+                        <th>Danh mục</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <!-- Table -->
+    </div>
+    <!-- /Container -->
 </div>
 @endsection

@@ -1,45 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>@yield('title')</title>
-    <!-- Bootstrap 4 -->
-    <link rel="stylesheet" href="{!! asset('assets/css/bootstrap-fe.min.css') !!}">
-    <!-- DataTables -->
-    <link rel="stylesheet" href="{!! asset('assets/css/dataTables.bootstrap4.min.css') !!}">
-    <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="{!! asset('assets/css/shop-homepage.css') !!}">
-  </head>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>IDT</title>
+        <!-- Google font -->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CVarela+Round" rel="stylesheet">
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="{!! asset('assets/css/bootstrap.min.css') !!}">
+        <!-- Owl Carousel -->
+        <link rel="stylesheet" href="{!! asset('assets/css/owl.carousel.css') !!}">
+        <link rel="stylesheet" href="{!! asset('assets/css/owl.theme.default.css') !!}">
+        <!-- Magnific Popup -->
+        <link rel="stylesheet" href="{!! asset('assets/css/magnific-popup.css') !!}">
+        <!-- Font Awesome Icon -->
+        <link rel="stylesheet" href="{!! asset('assets/css/font-awesome.min.css') !!}">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="{!! asset('assets/css/dataTables.bootstrap.min.css') !!}">
+        <!-- Custom styles for this template -->
+        <link rel="stylesheet" href="{!! asset('assets/css/style.css') !!}">
+    </head>
 
-  <body>
-  		<!-- Header -->
+    <body>
+        <!-- Header -->
         @include('frontend.layout.partials.header')
-	    <!-- Page Content -->
-	    <div class="container">
-	      <div class="row">
-	        <div class="col-lg-9">
-	        	<!-- Main slide -->
-				@include('frontend.layout.partials.main-slide')
-	          	<div class="row">
-	          		@yield('content')
-	          	</div>
-	        </div>
-	        <!-- Sidebar -->
-        	@include('frontend.layout.partials.sidebar')
-	      </div>
-	    </div>
-	    <!-- Footer -->
-	    @include('frontend.layout.partials.footer')
-	    <!-- jQuery -->
-	    <script src="{!! asset('assets/js/jquery.min.js') !!}"></script>
-	    <!-- DataTables -->
-	    <script src="{!! asset('assets/js/jquery.dataTables4.min.js') !!}"></script>
-	    <script src="{!! asset('assets/js/dataTables.bootstrap4.min.js') !!}"></script>
-
-	    <!-- Page script -->
+        <!-- Content -->
+        @yield('content')
+        <!-- Feature -->
+        @include('frontend.layout.partials.feature')
+        <!-- Numbers -->
+        @include('frontend.layout.partials.number')
+        <!-- Blogs -->
+        @include('frontend.layout.partials.blog')
+        <!-- Contact -->
+        @include('frontend.layout.partials.contact')
+        <!-- Footer -->
+        @include('frontend.layout.partials.footer')
+        <!-- jQuery -->
+        <script src="{!! asset('assets/js/jquery.min.js') !!}"></script>
+        <!-- Bootstrap -->
+        <script src="{!! asset('assets/js/bootstrap.min.js') !!}"></script>
+        <!-- Owl Carousel -->
+        <script src="{!! asset('assets/js/owl.carousel.min.js') !!}"></script>
+        <!-- Magnific Popup -->
+        <script src="{!! asset('assets/js/jquery.magnific-popup.js') !!}"></script>
+        <!-- DataTables -->
+        <script src="{!! asset('assets/js/jquery.dataTables.min.js') !!}"></script>
+        <script src="{!! asset('assets/js/dataTables.bootstrap.min.js') !!}"></script>
+        <!-- Page script -->
         <script src="{!! asset('assets/js/home.js') !!}"></script>
-	    @yield('script')
-  	</body>
+        <script src="{!! asset('assets/js/home-page.js') !!}"></script>
+        @yield('script')
+    </body>
 </html>

@@ -12,6 +12,7 @@ class Coin extends Eloquent
     const TYPE_VERY_LOW = 0;
     const TYPE_VERY_HIGH = 4;
 
+    const TYPE_ALL = 5;
     const TYPE_ICO = 2;
     const TYPE_SCAM = 4;
     const TYPE_ENDED = 0;
