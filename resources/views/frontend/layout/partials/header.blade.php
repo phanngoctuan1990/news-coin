@@ -24,7 +24,10 @@
             <!--  Main navigation  -->
             <ul class="main-nav nav navbar-nav navbar-right">
                 <li>
-                    <a href="{{ areActiveRoutes(['home.index']) }}">Trang chủ</a>
+                    <a href="{{ route('home.index') }}">Trang chủ</a>
+                </li>
+                <li>
+                    <a href="#blog">Tin tức</a>
                 </li>
                 <li>
                     <a href="#contact">Liên hệ</a>
