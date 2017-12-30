@@ -24,6 +24,12 @@
                             <label>Tiêu đề</label>
                             <input type="text" name="title" value="{{ $new->title }}" class="form-control" placeholder="Nhập tiêu đề bài viết">
                         </div>
+                        <div class="form-group">
+                            <label>Thumbnail</label>
+                            <input type="file" name="thumbnail"> 
+                            <br>
+                            <img src="{{ $new->thumbnail }}" border="0" width="200" align="center" />
+                        </div>
                         <!-- wysiwyg -->
                         <div class="form-group">
                             <label>Nội dung</label>

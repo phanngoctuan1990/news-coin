@@ -40,6 +40,12 @@ class NewsController extends Controller
         $new = new News;
         $new->title = $data['title'];
         $new->content = $data['content'];
+        // upload image
+        $img = $request->file('thumbnail');
+        $input['thumbnail'] = time() . '.' . $img->getClientOriginalExtension();
+        $destinationPath = public_path('/images/news/');
+        $img->move($destinationPath, $input['thumbnail']);
+        $new->thumbnail = $input['thumbnail'];
         $new->save();
         flash('Tạo mới tin tức thành công', 'success');
         return redirect()->route('admin.news.index');
@@ -55,6 +61,7 @@ class NewsController extends Controller
     public function show($id)
     {
         $new = News::find($id);
+        $new->thumbnail  = asset('/images/news/' . $new->thumbnail);
         return view('admin.news.show', compact('new'));
     }
     
@@ -71,6 +78,15 @@ class NewsController extends Controller
         $data = $request->all();
         $new = News::find($id);
         $new->title = $data['title'];
+        // handle image
+        if ($request->hasFile('thumbnail')) {
+            \File::delete(public_path('/images/news/' . $new->thumbnail));
+            $img = $request->file('thumbnail');
+            $input['thumbnail'] = time() . '.' . $img->getClientOriginalExtension();
+            $destinationPath = public_path('/images/news/');
+            $img->move($destinationPath, $input['thumbnail']);
+            $new->thumbnail = $input['thumbnail'];
+        }
         $new->content = $data['content'];
         $new->save();
         flash('Cập nhật tin tức thành công', 'success');
@@ -99,7 +115,13 @@ class NewsController extends Controller
      */
     public function datatables()
     {
-        return \Datatables::of(News::query())->addColumn('action', 'admin.news.datatables.browser')->make(true);
+        return \Datatables::of(News::query())
+                ->addColumn('action', 'admin.news.datatables.browser')
+                ->editColumn('thumbnail', function ($data) {
+                    $url = asset('/images/news/' . $data->thumbnail);
+                    return '<img src="' . $url . '" border="0" width="200" align="center" />';
+                })
+                ->make(true);
     }
     
     /**

@@ -7,6 +7,7 @@ $(function () {
         columns: [
             {data: 'id', name: 'id'},
             {data: 'title', name: 'title'},
+            {data: 'thumbnail', name: 'thumbnail', orderable: false, searchable: false},
             {data: 'content', name: 'content'},
             {data: 'created_at', name: 'created_at'},
             {data: 'action', name: 'action', orderable: false, searchable: false}
