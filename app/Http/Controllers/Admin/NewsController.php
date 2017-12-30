@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateNewsRequest;
 use App\Http\Requests\UpdateNewsRequest;
 use App\Models\News;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class NewsController extends Controller
 {
@@ -43,8 +44,11 @@ class NewsController extends Controller
         // upload image
         $img = $request->file('thumbnail');
         $input['thumbnail'] = time() . '.' . $img->getClientOriginalExtension();
-        $destinationPath = public_path('/images/news/');
-        $img->move($destinationPath, $input['thumbnail']);
+        $imageResize = Image::make($img->getRealPath());
+        $imageResize->save(public_path('/images/news/original/' .$input['thumbnail']));
+        $new->original = $input['thumbnail'];
+        $imageResize->resize(360, 203);
+        $imageResize->save(public_path('/images/news/thumbnail/' .$input['thumbnail']));
         $new->thumbnail = $input['thumbnail'];
         $new->save();
         flash('Tạo mới tin tức thành công', 'success');
@@ -61,7 +65,7 @@ class NewsController extends Controller
     public function show($id)
     {
         $new = News::find($id);
-        $new->thumbnail  = asset('/images/news/' . $new->thumbnail);
+        $new->thumbnail  = asset('/images/news/thumbnail/' . $new->thumbnail);
         return view('admin.news.show', compact('new'));
     }
     
@@ -80,11 +84,16 @@ class NewsController extends Controller
         $new->title = $data['title'];
         // handle image
         if ($request->hasFile('thumbnail')) {
-            \File::delete(public_path('/images/news/' . $new->thumbnail));
+            \File::delete(public_path('/images/news/thumbnail/' . $new->thumbnail));
+            \File::delete(public_path('/images/news/original/' . $new->thumbnail));
             $img = $request->file('thumbnail');
             $input['thumbnail'] = time() . '.' . $img->getClientOriginalExtension();
-            $destinationPath = public_path('/images/news/');
+            $imageResize = Image::make($img->getRealPath());
+            $imageResize->resize(360, 203);
+            $imageResize->save(public_path('/images/news/thumbnail/' .$input['thumbnail']));
+            $destinationPath = public_path('/images/news/original/');
             $img->move($destinationPath, $input['thumbnail']);
+            $new->original = $input['thumbnail'];
             $new->thumbnail = $input['thumbnail'];
         }
         $new->content = $data['content'];
@@ -117,8 +126,14 @@ class NewsController extends Controller
     {
         return \Datatables::of(News::query())
                 ->addColumn('action', 'admin.news.datatables.browser')
+                ->editColumn('title', function ($data) {
+                    return htmlentities($data->title);
+                })
+                ->editColumn('content', function ($data) {
+                    return htmlentities(str_limit($data->content, 200));
+                })
                 ->editColumn('thumbnail', function ($data) {
-                    $url = asset('/images/news/' . $data->thumbnail);
+                    $url = asset('/images/news/thumbnail/' . $data->thumbnail);
                     return '<img src="' . $url . '" border="0" width="200" align="center" />';
                 })
                 ->make(true);

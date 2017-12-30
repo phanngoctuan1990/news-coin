@@ -17,8 +17,10 @@ class CreateNewsTable extends Migration
                 $table->increments('id');
                 $table->string('title', 255);
                 $table->string('thumbnail');
+                $table->string('original');
                 $table->text('content');
                 $table->boolean('status')->default(0);
+                $table->integer('view_number')->default(0);
                 $table->timestamps();
             });
         }

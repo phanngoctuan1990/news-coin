@@ -16,7 +16,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('frontend.home.index');
+        $news = \DB::table('news')
+                ->orderBy('created_at', 'desc')
+                ->take(3)
+                ->get();
+        return view('frontend.home.index', compact('news'));
     }
 
     /**

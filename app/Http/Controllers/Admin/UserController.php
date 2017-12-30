@@ -149,6 +149,12 @@ class UserController extends Controller
     {
         return \Datatables::of(User::query())
                         ->addColumn('action', 'admin.user.datatables.browser')
+                        ->editColumn('full_name', function ($data) {
+                            return htmlentities($data->full_name);
+                        })
+                        ->editColumn('email', function ($data) {
+                            return htmlentities($data->email);
+                        })
                         ->make(true);
     }
 }
