@@ -24,6 +24,7 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Tiêu đề</th>
+                                <th>Thumbnail</th>
                                 <th>Nội dung</th>
                                 <th>Ngày tạo</th>
                                 <th>Tác vụ</th>

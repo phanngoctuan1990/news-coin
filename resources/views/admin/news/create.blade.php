@@ -22,6 +22,10 @@
                             <label>Tiêu đề</label>
                             <input type="text" name="title" class="form-control" placeholder="Nhập tiêu đề bài viết">
                         </div>
+                        <div class="form-group">
+                            <label>Thumbnail</label>
+                            <input type="file" name="thumbnail">
+                        </div>
                         <!-- wysiwyg -->
                         <div class="form-group">
                             <label>Nội dung</label>
