@@ -29,14 +29,7 @@
         @include('frontend.layout.partials.header')
         <!-- Content -->
         @yield('content')
-        <!-- Feature -->
-        @include('frontend.layout.partials.feature')
-        <!-- Numbers -->
-        @include('frontend.layout.partials.number')
-        <!-- Blogs -->
-        @include('frontend.layout.partials.blog')
-        <!-- Contact -->
-        @include('frontend.layout.partials.contact')
+        
         <!-- Footer -->
         @include('frontend.layout.partials.footer')
         <!-- jQuery -->

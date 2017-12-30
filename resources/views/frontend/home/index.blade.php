@@ -62,4 +62,12 @@
     </div>
     <!-- /Container -->
 </div>
+<!-- Blogs -->
+@include('frontend.layout.partials.blog')
+<!-- Feature -->
+@include('frontend.layout.partials.feature')
+<!-- Numbers -->
+@include('frontend.layout.partials.number')
+<!-- Contact -->
+@include('frontend.layout.partials.contact')
 @endsection

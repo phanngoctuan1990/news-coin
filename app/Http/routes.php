@@ -19,6 +19,7 @@ Route::auth();
 Route::group(['namespace' => 'Frontend'], function () {
     Route::get('/', ['as' => 'home.index', 'uses' => 'HomeController@index']);
     Route::get('/home/coin/datatables', 'HomeController@datatables');
+    Route::resource('/new', 'NewsController');
 });
 
 /**
