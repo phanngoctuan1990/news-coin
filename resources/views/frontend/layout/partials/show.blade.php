@@ -8,7 +8,7 @@
                 <a href="{{ route('home.index') }}">Trang chủ</a>
             </li>
             <li class="breadcrumb-item">
-                <a href="{{ route('home.index') }}">Tin tức</a>
+                <a href="#blog">Tin tức</a>
             </li>
             <li class="breadcrumb-item active">
                 <a href="">Bài viết</a>
