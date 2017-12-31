@@ -21,6 +21,7 @@ $(function () {
     tinymce.init({
         selector: '.textarea',
         theme: 'modern',
+        height: 320,
         plugins: [
             'advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker',
             'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
