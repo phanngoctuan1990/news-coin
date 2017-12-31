@@ -33,7 +33,7 @@
                         <!-- wysiwyg -->
                         <div class="form-group">
                             <label>Nội dung</label>
-                            <textarea class="textarea" name="content" placeholder="Nhập nội dung bài viết" style="widt 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
+                            <textarea class="textarea" name="content" placeholder="Nhập nội dung bài viết">
                                 {{ $new->content }}
                             </textarea>
                         </div>
@@ -51,10 +51,4 @@
 @endsection
 @section('script')
 {!! JsValidator::formRequest('App\Http\Requests\UpdateNewsRequest', '#form-update-news') !!}
-<script>
-    $(function () {
-        //bootstrap WYSIHTML5 - text editor
-        $('.textarea').wysihtml5();
-    })
-</script>
 @endsection

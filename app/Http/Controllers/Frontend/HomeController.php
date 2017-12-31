@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use App\Models\Coin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\News;
 
 class HomeController extends Controller
 {
@@ -18,6 +19,7 @@ class HomeController extends Controller
     {
         $news = \DB::table('news')
                 ->orderBy('created_at', 'desc')
+                ->where('status', News::ACCEPT)
                 ->take(3)
                 ->get();
         return view('frontend.home.index', compact('news'));

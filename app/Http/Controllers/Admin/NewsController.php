@@ -130,7 +130,7 @@ class NewsController extends Controller
                     return htmlentities($data->title);
                 })
                 ->editColumn('content', function ($data) {
-                    return htmlentities(str_limit($data->content, 200));
+                    return str_limit($data->content, 200);
                 })
                 ->editColumn('thumbnail', function ($data) {
                     $url = asset('/images/news/thumbnail/' . $data->thumbnail);

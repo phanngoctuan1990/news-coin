@@ -26,7 +26,7 @@
                     </div>
                     <div class="blog-content">
                         <h3>{{ $new->title }}</h3>
-                        <p>{{ $new->content }}</p>
+                        <p><?php echo $new->content ?></p>
                     </div>
                     <div class="blog-comments">
                         <h3 class="title">Danh sách tin tức</h3>
@@ -38,7 +38,7 @@
                                 </div>
                                 <div class="media-body">
                                     <h5 class="media-heading">{{ $value->title }}</h5>
-                                    <p>{{ str_limit($value->content, 300) }}</p>
+                                    <p><?php echo str_limit($value->content, 200) ?></p>
                                 </div>
                             </a>
                         </div>
@@ -46,24 +46,8 @@
                     </div>
                     <div style="">{{ $listNews->links() }}</div>
                     <div class="home-wrapper">
-                        <div id="contact" class="section sm-padding">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="section-header text-center">
-                                        <h2 class="title">Contact us</h2>
-                                    </div>
-                                    <div class="col-md-8 col-md-offset-2">
-                                        <form class="contact-form">
-                                            <input type="text" class="input" placeholder="Name">
-                                            <input type="email" class="input" placeholder="Email">
-                                            <input type="text" class="input" placeholder="Subject">
-                                            <textarea class="input" placeholder="Message"></textarea>
-                                            <button class="main-btn">Send message</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <!-- Contact -->
+                        @include('frontend.layout.partials.contact')
                     </div>
                 </div>
             </main>
