@@ -12,7 +12,7 @@
                     </div>
                     <div class="blog-content">
                         <h3>{{ $new->title }}</h3>
-                        <p>{{ str_limit($new->content, 300) }}</p>
+                        <p><?php echo str_limit($new->content, 200) ?></p>
                         <a href="{{ route('new.show', $new->id) }}">Xem thêm</a>
                     </div>
                 </div>

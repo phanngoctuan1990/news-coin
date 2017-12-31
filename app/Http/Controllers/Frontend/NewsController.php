@@ -20,10 +20,15 @@ class NewsController extends Controller
             ->increment('view_number', 1);
         $new = News::find($id);
         $newsPopulare = \DB::table('news')
+                ->where('id', '<>', $id)
+                ->where('status', News::ACCEPT)
                 ->orderBy('view_number', 'desc')
                 ->take(3)
                 ->get();
-        $listNews = News::where('id', '<>', $new->id)->paginate(20);
+        $listNews = \DB::table('news')
+                ->where('id', '<>', $new->id)
+                ->where('status', News::ACCEPT)
+                ->paginate(20);
         return view('frontend.layout.partials.show', compact('new', 'listNews', 'newsPopulare'));
     }
 }
