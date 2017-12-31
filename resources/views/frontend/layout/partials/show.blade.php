@@ -26,7 +26,7 @@
                     </div>
                     <div class="blog-content">
                         <h3>{{ $new->title }}</h3>
-                        <p><?php echo $new->content ?></p>
+                        <p>{!! $new->content !!}</p>
                     </div>
                     <div class="blog-comments">
                         <h3 class="title">Danh sách tin tức</h3>
@@ -38,7 +38,7 @@
                                 </div>
                                 <div class="media-body">
                                     <h5 class="media-heading">{{ $value->title }}</h5>
-                                    <p><?php echo str_limit($value->content, 200) ?></p>
+                                    <p>{!! str_limit($value->content, 200) !!}</p>
                                 </div>
                             </a>
                         </div>
