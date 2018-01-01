@@ -22,7 +22,7 @@
                     <table id="coins" class="table table-bordered table-striped">
                         <thead>
                             <tr>
-                                <th>ID</th>
+                                <th>Thứ tự</th>
                                 <th>Tiêu đề</th>
                                 <th>Thumbnail</th>
                                 <th>Rate</th>

@@ -3,5 +3,5 @@
 @if($status != \App\Models\News::ACCEPT)
 <a href="{{ route('admin.news.updateStatus', $id) }}" class="btn btn-warning btn-sm">Chờ duyệt...</a>
 @else
-<a href="javascript:void(0" class="btn btn-success btn-sm">Đã duyệt</a>
+<a href="javascript:void(0)" class="btn btn-success btn-sm">Đã duyệt</a>
 @endif

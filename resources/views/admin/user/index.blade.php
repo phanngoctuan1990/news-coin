@@ -22,7 +22,7 @@
                     <table id="id-users" class="table table-bordered table-striped">
                         <thead>
                             <tr>
-                                <th>ID</th>
+                                <th>Thứ tự</th>
                                 <th>Tên</th>
                                 <th>Email</th>
                                 <th>Ngày tạo</th>
