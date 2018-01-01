@@ -78,6 +78,7 @@
         <script src="{!! asset('assets/js/coin.js') !!}"></script>
         <script src="{!! asset('assets/js/user.js') !!}"></script>
         <script src="{!! asset('assets/js/category-coin.js') !!}"></script>
+        <script src="{!! asset('assets/js/contact-us.js') !!}"></script>
         <!-- Tinymce -->
         <script src="{!! asset('assets/js/tinymce/js/tinymce/jquery.tinymce.min.js') !!}"></script>
         <script src="{!! asset('assets/js/tinymce/js/tinymce/tinymce.min.js') !!}"></script>

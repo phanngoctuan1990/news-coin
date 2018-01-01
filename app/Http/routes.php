@@ -56,5 +56,13 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
         // Category coin
         Route::get('/category-coin/datatables', 'CategoryController@datatables');
         Route::resource('/category-coin', 'CategoryController');
+
+        // Contact us
+        Route::get('/contact-us/datatables', 'ContactUsController@datatables');
+        Route::resource('/contact-us', 'ContactUsController', ['only' => ['index', 'show']]);
+        Route::post('/contact-us/{id}/reply', [
+            'as' => 'admin.contact.reply',
+            'uses' => 'ContactUsController@reply'
+        ]);
     });
 });

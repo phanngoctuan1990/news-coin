@@ -16,8 +16,6 @@ $(function () {
             "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Vietnamese.json",
         }
     });
-});
-$(function () {
     tinymce.init({
         selector: '.textarea',
         theme: 'modern',
