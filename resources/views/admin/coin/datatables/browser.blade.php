@@ -3,5 +3,5 @@
 @if($is_publish != \App\Models\Coin::TYPE_PUBLISH)
 <a href="{{ route('admin.coin.updateStatus', $id) }}" class="btn btn-warning btn-sm">Chờ duyệt...</a>
 @else
-<a href="javascript:void(0" class="btn btn-success btn-sm">Đã duyệt</a>
+<a href="javascript:void(0)" class="btn btn-success btn-sm">Đã duyệt</a>
 @endif

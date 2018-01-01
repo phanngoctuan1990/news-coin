@@ -1,15 +1,14 @@
 @extends('admin.layout.master')
-@section('title', 'Quản lý thể loại coin')
+@section('title', 'Quản lý hộp thư')
 @section('content')
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
-        Danh sách thể loại coin
+        Hộp thư
     </h1>
     <ol class="breadcrumb">
         <li><a href="{{ route('admin.dashboard') }}">Trang chủ</a></li>
-        <li><a href="{{ route('admin.category-coin.index') }}">Thể loại coin</a></li>
-        <li class="active">Danh sách thể loại coin</li>
+        <li class="active"><a href="{{ route('admin.contact-us.index') }}">Hộp thư</a></li>
     </ol>
 </section>
 
@@ -19,11 +18,15 @@
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-body table-responsive">
-                    <table id="category-coins" class="table table-bordered table-striped">
+                    <table id="contact-us" class="table table-bordered table-striped">
                         <thead>
                             <tr>
                                 <th>Thứ tự</th>
-                                <th>Tên thể loại</th>
+                                <th>Tên người liên hệ</th>
+                                <th>Địa chỉ mail</th>
+                                <th>Tiêu đề</th>
+                                <th>Ngày gửi</th>
+                                <th>Trạng thái</th>
                                 <th>Tác vụ</th>
                             </tr>
                         </thead>
