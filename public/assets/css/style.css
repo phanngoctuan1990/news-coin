@@ -1841,3 +1841,11 @@ header {
   overflow-x: hidden;
   color: #868f9b;
 }
+
+.fixed-top {
+  position: fixed;
+}
+
+.un-fixed {
+  position: absolute;
+}
