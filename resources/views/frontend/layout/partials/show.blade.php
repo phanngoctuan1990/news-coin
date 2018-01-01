@@ -1,21 +1,5 @@
 @extends('frontend.layout.master')
 @section('content')
-<div class="header-wrapper sm-padding bg-grey">
-    <div class="container">
-        <h2>Tin tức</h2>
-        <ul class="breadcrumb">
-            <li class="breadcrumb-item">
-                <a href="{{ route('home.index') }}">Trang chủ</a>
-            </li>
-            <li class="breadcrumb-item">
-                <a href="#blog">Tin tức</a>
-            </li>
-            <li class="breadcrumb-item active">
-                <a href="">Bài viết</a>
-            </li>
-        </ul>
-    </div>
-</div>
 <div id="blog" class="section md-padding">
     <div class="container">
         <div class="row">
