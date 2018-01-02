@@ -14,12 +14,13 @@
 
             <!-- contact form -->
             <div class="col-md-8 col-md-offset-2">
-                <form class="contact-form">
-                    <input type="text" class="input" placeholder="Name">
-                    <input type="email" class="input" placeholder="Email">
-                    <input type="text" class="input" placeholder="Subject">
-                    <textarea class="input" placeholder="Message"></textarea>
-                    <button class="main-btn">Send message</button>
+                <form class="contact-form" id="form-create-contact" action="{{ route('contact-us.store') }}" method="POST">
+                    <input type="text" class="input" name="name" placeholder="Name" required>
+                    <input type="email" class="input" name="email" placeholder="Email" required>
+                    <input type="text" class="input" name="subject" placeholder="Subject" required>
+                    <textarea class="input" name="message" placeholder="Message" required></textarea>
+                    {{ csrf_field() }}
+                    <button type="submit" class="main-btn">Send message</button>
                 </form>
             </div>
             <!-- /contact form -->

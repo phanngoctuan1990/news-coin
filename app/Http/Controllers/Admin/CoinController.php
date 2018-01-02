@@ -134,7 +134,6 @@ class CoinController extends Controller
         $coin->stage            = $data['stage'];
         $coin->start_date       = Carbon::parse($data['start_date'])->format('Y-m-d');
         $coin->end_date         = Carbon::parse($data['end_date'])->format('Y-m-d');
-        ;
         $coin->round            = 'round';
 
         // upload image
