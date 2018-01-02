@@ -53,4 +53,28 @@ $(function () {
                 break;
         }
     });
+
+    // $(document).on('submit', '#form-create-contact', function(e) {
+    //     e.preventDefault();
+    //     var name = $('.contact-name').val();
+    //     var email = $('.contact-email').val();
+    //     var subject = $('.contact-subject').val();
+    //     var message = $('.contact-message').val();
+    //     if (name && email && subject && message) {}
+    //     var token = $('meta[name="csrf-token"]').attr('content');
+    //     var action = $(this).attr('action');
+    //     $.ajax({
+    //         method: "POST",
+    //         url: "/contact-us",
+    //         headers: {'X-CSRF-TOKEN': token},
+    //         data: { 
+    //             name: $('.contact-name').val(), 
+    //             email: $('.contact-email').val(), 
+    //             subject: $('.contact-subject').val(), 
+    //             message: $('.contact-message').val(), 
+    //         }
+    //     }).done(function( msg ) {
+    //         alert( "Data Saved: " + msg );
+    //     });
+    // });
 });

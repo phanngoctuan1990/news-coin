@@ -1,7 +1,7 @@
 @extends('admin.layout.master-login')
 @section('content')
 <div class="login-box-body">
-    <p class="login-box-msg">Sign in to start your session</p>
+    <p class="login-box-msg"></p>
     @include('flash::message')
     <form action="{{ url('/login') }}" method="post">
         {{ csrf_field() }}
@@ -37,6 +37,6 @@
             <!-- /.col -->
         </div>
     </form>
-    <a href="{{ url('/password/reset') }}">Bạn đã quên mật khẩu?</a><br>
+    <!-- <a href="{{ url('/password/reset') }}">Bạn đã quên mật khẩu?</a><br> -->
 </div>
 @endsection
