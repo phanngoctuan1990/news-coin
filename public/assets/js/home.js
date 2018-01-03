@@ -38,4 +38,19 @@ $(function () {
         datatables.draw();
         e.preventDefault();
     });
+
+    $(window).scroll(() => {
+        const topOfcontact = $('#contact').position().top;
+        const heightOfContact = $('#contact').outerHeight();
+        switch (true) {
+            case $(window).scrollTop() + heightOfContact > topOfcontact:
+                $('.widget').removeClass('fixed-top');
+                $('.widget').addClass('un-fixed');
+                break;
+            default:
+                $('.widget').addClass('fixed-top');
+                $('.widget').removeClass('un-fixed');
+                break;
+        }
+    });
 });

@@ -18,6 +18,12 @@ if (!(auth()->user()->is_admin)) {
                     <span>Trang chủ</span>
                 </a>
             </li>
+            <li class="{{ areActiveRoutes(['admin.contact-us.index']) }}">
+                <a href="{{ route('admin.contact-us.index') }}">
+                    <i class="fa fa-envelope"></i>
+                    <span>Hộp thư</span>
+                </a>
+            </li>
             <li class="treeview {{ areActiveRoutes(['admin.user.index', 'admin.user.create']) }}">
                 <a href="#">
                     <i class="fa fa-user"></i>
