@@ -1,6 +1,6 @@
 @extends('frontend.layout.master')
 @section('content')
-<div id="about" class="section md-padding">
+<div id="about" class="section sm-padding">
     <!-- Container -->
     <div class="container">
         <!-- Filter -->
