@@ -3,10 +3,6 @@
 <div id="about" class="section md-padding">
     <!-- Container -->
     <div class="container">
-        <!-- Section header -->
-        <div class="section-header text-center">
-            <h2 class="title">Welcome to IDT Website</h2>
-        </div>
         <!-- Filter -->
         <div class="row sm-padding">
             <!-- Right filter -->
