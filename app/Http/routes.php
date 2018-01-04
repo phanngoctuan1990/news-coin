@@ -11,7 +11,11 @@
   |
  */
 
-Route::auth();
+Route::group(['prefix'=>'admin'], function () {
+    Route::get('/', 'Auth\AuthController@getLogin');
+    Route::post('login', 'Auth\AuthController@postLogin');
+    Route::get('logout', 'Auth\AuthController@logout');
+});
 
 /**
  * Front end
