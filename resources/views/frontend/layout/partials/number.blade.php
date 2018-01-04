@@ -1,7 +1,7 @@
 <div id="numbers" class="section sm-padding">
 
     <!-- Background Image -->
-    <div class="bg-img" style="background-image: url('./images/front/background2.jpg');">
+    <div class="bg-img" style="background-image: url('./images/front/bg_coin.jpg');">
         <div class="overlay"></div>
     </div>
     <!-- /Background Image -->
