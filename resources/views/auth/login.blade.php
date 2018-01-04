@@ -3,7 +3,7 @@
 <div class="login-box-body">
     <p class="login-box-msg"></p>
     @include('flash::message')
-    <form action="{{ url('/login') }}" method="post">
+    <form action="{{ url('admin/login') }}" method="post">
         {{ csrf_field() }}
         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }} has-feedback">
             <input id="email" type="email" class="form-control" name="email" placeholder="Email đăng nhập" value="{{ old('email') }}">
