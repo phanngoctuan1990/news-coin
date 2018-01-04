@@ -1,10 +1,10 @@
 @extends('frontend.layout.master')
 @section('content')
-<div id="about" class="section sm-padding">
+<div id="about" class="section">
     <!-- Container -->
     <div class="container">
         <!-- Filter -->
-        <div class="row sm-padding">
+        <div class="row cls-menu-filter">
             <!-- Right filter -->
             <div class="col-lg-6">
                 

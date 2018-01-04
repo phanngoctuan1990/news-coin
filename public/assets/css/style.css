@@ -1849,3 +1849,7 @@ header {
 .un-fixed {
   position: absolute;
 }
+.cls-menu-filter {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
