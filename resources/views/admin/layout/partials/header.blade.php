@@ -17,7 +17,7 @@
         </a>
         <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
-            <li><a href="{{ url('\admin\logout') }}"><span class="glyphicon glyphicon-log-out"></span> Đăng xuất</a></li>
+            <li><a href="{{ route('admin.get.logout') }}"><span class="glyphicon glyphicon-log-out"></span> Đăng xuất</a></li>
         </div>
     </nav>
 </header>

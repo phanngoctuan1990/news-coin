@@ -30,13 +30,10 @@
                 <label><input type="checkbox" value="remember"> Ghi nhớ</label>
                 </div>
             </div>
-            <!-- /.col -->
             <div class="col-xs-4">
                 <button type="submit" class="btn btn-primary btn-block btn-flat">Đăng nhập</button>
             </div>
-            <!-- /.col -->
         </div>
     </form>
-    <!-- <a href="{{ url('/password/reset') }}">Bạn đã quên mật khẩu?</a><br> -->
 </div>
 @endsection
