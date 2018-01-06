@@ -25,6 +25,7 @@ class CreateNewsRequest extends Request
         $rules = [
             'title'     => 'required',
             'content'   => 'required',
+            'thumbnail'   => 'required|image|mimes:jpg,gif,png,jpeg|max:2048',
         ];
         return $rules;
     }
