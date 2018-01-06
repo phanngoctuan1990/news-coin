@@ -25,6 +25,7 @@ class UpdateNewsRequest extends Request
         $rules = [
             'title'     => 'required',
             'content'   => 'required',
+            'thumbnail'   => 'image|mimes:jpg,gif,png,jpeg|max:2048',
         ];
         return $rules;
     }
