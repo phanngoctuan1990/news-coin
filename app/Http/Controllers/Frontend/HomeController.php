@@ -22,7 +22,8 @@ class HomeController extends Controller
                 ->where('status', News::ACCEPT)
                 ->take(3)
                 ->get();
-        return view('frontend.home.index', compact('news'));
+        $totalCoin = Coin::all()->count();
+        return view('frontend.home.index', compact('news', 'totalCoin'));
     }
 
     /**
