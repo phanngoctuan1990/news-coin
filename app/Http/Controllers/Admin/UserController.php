@@ -71,7 +71,7 @@ class UserController extends Controller
     public function show($id)
     {
         $user = User::with(['userRoles'])->find($id);
-        if ($user->is_admin && !auth()->user()->is_admin) {
+        if ($user->is_admin && !auth('admin')->user()->is_admin) {
             flash('Không thể xem chi tiết tài khoản admin', 'warning');
             return redirect()->back();
         }
@@ -90,13 +90,13 @@ class UserController extends Controller
     {
         $data = $request->all();
         $user = User::find($id);
-        if ($user->is_admin && !auth()->user()->is_admin) {
+        if ($user->is_admin && !auth('admin')->user()->is_admin) {
             flash('Không thể thay đổi tài khoản admin', 'warning');
             return redirect()->back();
         }
         $user->full_name = $data['full_name'];
         $user->email = $data['email'];
-        if (auth()->user()->is_admin && auth()->user()->id == $user->id) {
+        if (auth('admin')->user()->is_admin && auth('admin')->user()->id == $user->id) {
             $user->password = bcrypt($data['password']);
         }
         $user->save();
