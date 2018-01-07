@@ -3,6 +3,7 @@
     <div class="bg-img" style="background-image: url('./images/front/bg_coin.jpg');">
         <div class="overlay"></div>
     </div>
+    {{ Visitor::log() }}
     <!-- /Background Image -->
     <!-- Container -->
     <div class="container">
