@@ -1840,3 +1840,8 @@ header {
   overflow-x: hidden;
   color: #868f9b;
 }
+
+.cls-menu-filter {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}

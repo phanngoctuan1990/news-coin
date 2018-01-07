@@ -1,8 +1,8 @@
 <!-- Left side column. contains the logo and sidebar -->
 <?php
-if (!(auth()->user()->is_admin)) {
+if (!(auth('admin')->user()->is_admin)) {
     $userRoles = [];
-    foreach (auth()->user()->userRoles as $value) {
+    foreach (auth('admin')->user()->userRoles as $value) {
         $userRoles[] = $value['role_id'];
     }
 }
@@ -34,12 +34,12 @@ if (!(auth()->user()->is_admin)) {
                 </a>
                 <ul class="treeview-menu">
                     <li class="{{ areActiveRoutes(['admin.user.index']) }}"><a href="{{ route('admin.user.index') }}"><i class="fa fa-circle-o"></i> Danh sách tài khoản</a></li>
-                    @if(auth()->user()->is_admin)
+                    @if(auth('admin')->user()->is_admin)
                     <li class="{{ areActiveRoutes(['admin.user.create']) }}"><a href="{{ route('admin.user.create') }}"><i class="fa fa-circle-o"></i> Tạo mới tài khoản</a></li>
                     @endif
                 </ul>
             </li>
-            @if(auth()->user()->is_admin)
+            @if(auth('admin')->user()->is_admin)
             <li class="treeview {{ areActiveRoutes(['admin.news.index', 'admin.news.create']) }}">
                 <a href="#">
                     <i class="fa fa-edit"></i>

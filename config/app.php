@@ -152,6 +152,7 @@ return [
         Laracasts\Flash\FlashServiceProvider::class,
         Proengsoft\JsValidation\JsValidationServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+        Weboap\Visitor\VisitorServiceProvider::class,
 
         /*
          * Application Service Providers...

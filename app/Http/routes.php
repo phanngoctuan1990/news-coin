@@ -11,12 +11,19 @@
   |
  */
 
-Route::auth();
-
 /**
  * Front end
  */
 Route::group(['namespace' => 'Frontend'], function () {
+    // Login customer
+    Route::get('login', ['as' => 'get.login', 'uses' => 'AuthController@getLogin']);
+    Route::post('login', ['as' => 'post.login', 'uses' => 'AuthController@postLogin']);
+    Route::get('logout', ['as' => 'get.logout', 'uses' => 'AuthController@getLogout']);
+
+    // Register customer
+    Route::get('register', ['as' => 'get.register', 'uses' => 'AuthController@getRegister']);
+    Route::post('register', ['as' => 'post.register', 'uses' => 'AuthController@postRegister']);
+
     Route::get('/', ['as' => 'home.index', 'uses' => 'HomeController@index']);
     Route::get('/home/coin/datatables', 'HomeController@datatables');
     Route::resource('/new', 'NewsController');
@@ -27,7 +34,12 @@ Route::group(['namespace' => 'Frontend'], function () {
  * Back end
  */
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
-    Route::group(['middleware' => 'auth'], function () {
+    // Authenticate
+    Route::get('/', ['as' => 'admin.get.login', 'uses' => 'AuthController@getLogin']);
+    Route::post('login', ['as' => 'admin.post.login', 'uses' => 'AuthController@postLogin']);
+    Route::get('logout', ['as' => 'admin.get.logout', 'uses' => 'AuthController@getLogout']);
+
+    Route::group(['middleware' => 'auth:admin'], function () {
         
         // Dasboard
         Route::get('/dashboard', ['as' => 'admin.dashboard', function () {
