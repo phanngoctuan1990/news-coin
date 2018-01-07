@@ -37,7 +37,10 @@ class CreateUserRequest extends Request
     public function messages()
     {
         return [
-            'full_name.required'     => 'Trường tên bắt buộc nhập.',
+            'full_name.required'             => 'Trường tên bắt buộc nhập.',
+            'password.required'              => 'Trường mật khẩu bắt buộc nhập.',
+            'role_id.required'               => 'Hãy chọn quyền truy cập cho quản trị viên.',
+            'password_confirmation.required' => 'Trường xác nhận mật khẩu bắt buộc nhập.',
         ];
     }
 }

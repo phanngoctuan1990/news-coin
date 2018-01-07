@@ -24,18 +24,24 @@ if (!(auth('admin')->user()->is_admin)) {
                     <span>Hộp thư</span>
                 </a>
             </li>
+            <li class="{{ areActiveRoutes(['admin.customer.index']) }}">
+                <a href="{{ route('admin.customer.index') }}">
+                    <i class="fa fa-child"></i>
+                    <span>Thành viên</span>
+                </a>
+            </li>
             <li class="treeview {{ areActiveRoutes(['admin.user.index', 'admin.user.create']) }}">
                 <a href="#">
                     <i class="fa fa-user"></i>
-                    <span>Tài khoản</span>
+                    <span>Quản trị viên</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="{{ areActiveRoutes(['admin.user.index']) }}"><a href="{{ route('admin.user.index') }}"><i class="fa fa-circle-o"></i> Danh sách tài khoản</a></li>
+                    <li class="{{ areActiveRoutes(['admin.user.index']) }}"><a href="{{ route('admin.user.index') }}"><i class="fa fa-circle-o"></i> Danh sách quản trị viên</a></li>
                     @if(auth('admin')->user()->is_admin)
-                    <li class="{{ areActiveRoutes(['admin.user.create']) }}"><a href="{{ route('admin.user.create') }}"><i class="fa fa-circle-o"></i> Tạo mới tài khoản</a></li>
+                    <li class="{{ areActiveRoutes(['admin.user.create']) }}"><a href="{{ route('admin.user.create') }}"><i class="fa fa-circle-o"></i> Tạo mới quản trị viên</a></li>
                     @endif
                 </ul>
             </li>

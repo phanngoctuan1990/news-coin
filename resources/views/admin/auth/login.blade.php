@@ -7,7 +7,7 @@
         {{ csrf_field() }}
         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }} has-feedback">
             <input id="email" type="email" class="form-control" name="email" placeholder="Email đăng nhập" value="{{ old('email') }}">
-
+            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
             @if ($errors->has('email'))
                 <span class="help-block">
                     <strong>{{ $errors->first('email') }}</strong>
@@ -16,7 +16,7 @@
         </div>
         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }} has-feedback">
             <input id="password" type="password" class="form-control" placeholder="Mật khẩu" name="password">
-
+            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             @if ($errors->has('password'))
                 <span class="help-block">
                     <strong>{{ $errors->first('password') }}</strong>
