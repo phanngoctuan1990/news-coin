@@ -1296,7 +1296,6 @@ header {
 }
 
 .blog-comments .media .media-body .media-heading {
-  text-transform: uppercase;
   margin-bottom: 10px;
 }
 
@@ -1840,12 +1839,4 @@ header {
   line-height: 1.6;
   overflow-x: hidden;
   color: #868f9b;
-}
-
-.fixed-top {
-  position: fixed;
-}
-
-.un-fixed {
-  position: absolute;
 }
