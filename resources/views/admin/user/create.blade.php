@@ -1,19 +1,17 @@
 @extends('admin.layout.master')
-@section('title', 'Quản lý tài khoản')
+@section('title', 'Quản trị viên')
 @section('content')
-<!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
-        Tạo tài khoản
+        Tạo quản trị viên
     </h1>
     <ol class="breadcrumb">
         <li><a href="{{ route('admin.dashboard') }}">Trang chủ</a></li>
-        <li><a href="{{ route('admin.user.index') }}">Tài khoản</a></li>
-        <li class="active">Tạo tài khoản</li>
+        <li><a href="{{ route('admin.user.index') }}">Quản trị viên</a></li>
+        <li class="active">Tạo quản trị viên</li>
     </ol>
 </section>
 
-<!-- Main content -->
 <section class="content">
     <div class="row">
         <div class="col-md-12">
@@ -30,12 +28,12 @@
                             <input type="email" name="email" class="form-control" id="id-inputEmail" placeholder="Nhập email">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Password</label>
-                            <input type="password" name="password" class="form-control" id="id-inputPassword1" placeholder="Nhập password">
+                            <label for="exampleInputPassword1">Mật khẩu</label>
+                            <input type="password" name="password" class="form-control" id="id-inputPassword1" placeholder="Nhập mật khẩu">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword2">Nhập lại Password</label>
-                            <input type="password" name="password_confirmation" class="form-control" id="id-inputPassword2" placeholder="Nhập password">
+                            <label for="exampleInputPassword2">Nhập lại mật khẩu</label>
+                            <input type="password" name="password_confirmation" class="form-control" id="id-inputPassword2" placeholder="Nhập lại mật khẩu">
                         </div>
                         <div class="form-group checkbox">
                             <label class="cls-checkbox">

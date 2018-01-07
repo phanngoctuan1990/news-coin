@@ -57,7 +57,7 @@ class UserController extends Controller
             ];
         }
         \DB::table('user_role')->insert($userRole);
-        flash('Tạo mới tài khoản thành công', 'success');
+        flash('Tạo mới quản trị viên thành công', 'success');
         return redirect()->route('admin.user.index');
     }
 
@@ -96,8 +96,10 @@ class UserController extends Controller
         }
         $user->full_name = $data['full_name'];
         $user->email = $data['email'];
-        if (auth('admin')->user()->is_admin && auth('admin')->user()->id == $user->id) {
-            $user->password = bcrypt($data['password']);
+        if (!empty($data['password'])) {
+            if (auth('admin')->user()->is_admin && auth('admin')->user()->id == $user->id) {
+                $user->password = bcrypt($data['password']);
+            }
         }
         $user->save();
         if (!$user->is_admin) {
@@ -117,7 +119,7 @@ class UserController extends Controller
             }
             \DB::table('user_role')->insert($userRole);
         }
-        flash('Cập nhật tài khoản thành công', 'success');
+        flash('Cập nhật quản trị viên thành công', 'success');
         return redirect()->route('admin.user.index');
     }
 
@@ -136,7 +138,7 @@ class UserController extends Controller
             return redirect()->back();
         }
         $user->delete();
-        flash('Xoá tài khoản thành công', 'success');
+        flash('Xoá quản trị viên thành công', 'success');
         return redirect()->route('admin.user.index');
     }
 

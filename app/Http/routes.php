@@ -50,6 +50,10 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
         Route::get('/user/datatables', 'UserController@datatables');
         Route::resource('/user', 'UserController');
 
+        // Customer
+        Route::get('/customer/datatables', 'CustomerController@datatables');
+        Route::resource('/customer', 'CustomerController', ['only' => ['index']]);
+
         // News
         Route::get('/news/datatables', 'NewsController@datatables');
         Route::resource('/news', 'NewsController');

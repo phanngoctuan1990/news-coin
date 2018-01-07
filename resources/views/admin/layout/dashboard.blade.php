@@ -18,14 +18,14 @@
             <!-- small box -->
             <div class="small-box bg-aqua">
                 <div class="inner">
-                    <h3>Tài khoản</h3>
+                    <h3>Quản trị viên</h3>
 
                     <p>quản lý</p>
                 </div>
                 <div class="icon">
                     <i class="ion ion-person"></i>
                 </div>
-                <a href="{{ route('admin.user.index') }}" class="small-box-footer">Danh sách tài khoản <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="{{ route('admin.user.index') }}" class="small-box-footer">Danh sách quản trị viên <i class="fa fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <!-- ./col -->
