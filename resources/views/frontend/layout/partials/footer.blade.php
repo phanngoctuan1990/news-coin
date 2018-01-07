@@ -8,7 +8,7 @@
 
                 <!-- footer logo -->
                 <div class="footer-logo">
-                    <a href="index.html">
+                    <a href="http://idautu.net/">
                         <img src="{{ asset('/images/front/logo-alt.png') }}" alt="logo">
                     </a>
                 </div>

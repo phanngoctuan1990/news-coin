@@ -1296,7 +1296,6 @@ header {
 }
 
 .blog-comments .media .media-body .media-heading {
-  text-transform: uppercase;
   margin-bottom: 10px;
 }
 
@@ -1842,14 +1841,7 @@ header {
   color: #868f9b;
 }
 
-.fixed-top {
-  position: fixed;
-}
-
-.un-fixed {
-  position: absolute;
-}
 .cls-menu-filter {
-    padding-top: 30px;
-    padding-bottom: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
