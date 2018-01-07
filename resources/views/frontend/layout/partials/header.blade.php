@@ -7,7 +7,7 @@
             <div class="navbar-header">
                 <!-- Logo -->
                 <div class="navbar-brand">
-                    <a href="index.html">
+                    <a href="http://idautu.net/">
                         <img class="logo" src="{{ '/images/front/logo.png' }}" alt="logo">
                         <img class="logo-alt" src="{{ '/images/front/logo-alt.png' }}" alt="logo">
                     </a>
