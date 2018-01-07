@@ -3,7 +3,7 @@
         <div class="container">
             <div class="navbar-header">
                 <div class="navbar-brand">
-                    <a href="http://idautu.net/">
+                    <a href="{{ route('home.index') }}">
                         <img class="logo" src="{{ '/images/front/logo.png' }}" alt="logo">
                         <img class="logo-alt" src="{{ '/images/front/logo-alt.png' }}" alt="logo">
                     </a>

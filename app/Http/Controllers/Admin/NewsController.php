@@ -112,6 +112,8 @@ class NewsController extends Controller
     public function destroy($id)
     {
         $new = News::find($id);
+        \File::delete(public_path('images/news/thumbnail/' . $new->thumbnail));
+        \File::delete(public_path('images/news/original/' . $new->thumbnail));
         $new->delete();
         flash('Xoá tin tức thành công', 'success');
         return redirect()->route('admin.news.index');
