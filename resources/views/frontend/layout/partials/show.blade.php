@@ -1,6 +1,6 @@
 @extends('frontend.layout.master')
 @section('content')
-<div id="blog" class="section md-padding">
+<div id="blog" class="section sm-padding">
     <div class="container">
         <div class="row">
             <main id="main" class="col-md-9">
