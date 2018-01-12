@@ -27,7 +27,6 @@
 
         <div class="row">
             <div class="col-xs-8">
-                <a href="{{ route('home.index') }}" class="text-center">Trang chủ</a><br>
                 <a href="{{ route('get.register') }}" class="text-center">Đăng ký thành viên mới</a>
             </div>
             <div class="col-xs-4">

@@ -43,7 +43,6 @@
 		</div>
 		<div class="row">
 			<div class="col-xs-8">
-				<a href="{{ route('home.index') }}" class="text-center">Trang chủ</a><br>
 				<a href="{{ route('get.login') }}" class="text-center">Bạn đã đăng ký tài khoản?</a>
 			</div>
 			<div class="col-xs-4">
