@@ -22,7 +22,7 @@
                                 </div>
                                 <div class="media-body">
                                     <h5 class="media-heading">{{ $value->title }}</h5>
-                                    <p>{!! str_limit($value->content, 200) !!}</p>
+                                    <p><?php echo str_limit(strip_tags($value->content, 200)) ?></p>
                                 </div>
                             </a>
                         </div>
@@ -41,7 +41,7 @@
                     @foreach($newsPopulare as $newPopulare)
                     <div class="widget-post">
                         <a href="{{ route('new.show', $newPopulare->id) }}">
-                            <img src="{{ asset('/images/news/thumbnail/'. $newPopulare->thumbnail) }}" width="85" height="60" alt="">{{ str_limit($newPopulare->title, 100) }}
+                            <img src="{{ asset('/images/news/thumbnail/'. $newPopulare->thumbnail) }}" width="85" height="60" alt="">{{ str_limit($newPopulare->title, 30) }}
                         </a>
                         <ul class="blog-meta">
                             <li>{{ $newPopulare->updated_at }}</li>

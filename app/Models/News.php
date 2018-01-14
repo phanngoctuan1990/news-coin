@@ -18,6 +18,8 @@ class News extends Eloquent
     protected $fillable = [
         'title',
         'content',
+        'status',
+        'view_number',
         'thumbnail',
         'original',
     ];
