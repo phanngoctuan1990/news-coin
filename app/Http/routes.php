@@ -23,11 +23,13 @@ Route::group(['namespace' => 'Frontend'], function () {
     // Register customer
     Route::get('register', ['as' => 'get.register', 'uses' => 'AuthController@getRegister']);
     Route::post('register', ['as' => 'post.register', 'uses' => 'AuthController@postRegister']);
-
-    Route::get('/', ['as' => 'home.index', 'uses' => 'HomeController@index']);
-    Route::get('/home/coin/datatables', 'HomeController@datatables');
-    Route::resource('/new', 'NewsController');
-    Route::resource('/contact-us', 'ContactUsController', ['only' => ['store']]);
+    
+    Route::group(['middleware' => 'auth:web'], function () {
+        Route::get('/', ['as' => 'home.index', 'uses' => 'HomeController@index']);
+        Route::get('/home/coin/datatables', 'HomeController@datatables');
+        Route::resource('/new', 'NewsController');
+        Route::resource('/contact-us', 'ContactUsController', ['only' => ['store']]);
+    });
 });
 
 /**
