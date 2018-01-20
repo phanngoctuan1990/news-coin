@@ -36,6 +36,7 @@ class HomeController extends Controller
     public function datatables(Request $request)
     {
         $columns = [
+            'coin.id',
             'coin.name',
             'thumbnail',
             'rate',
@@ -58,8 +59,11 @@ class HomeController extends Controller
 
         $result = \Datatables::of($coins)
             ->editColumn('name', function ($data) {
-                $url = asset('/images/coins/' . $data->thumbnail);
-                return '<img src="' . $url . '" border="0" width="40" align="center" /> ' . htmlentities($data->name);
+                return htmlentities($data->name);
+            })
+            ->editColumn('thumbnail', function ($data) {
+                $url = asset('/images/coins/thumbnail/' . $data->thumbnail);
+                return '<img src="' . $url . '" border="0" width="40" align="center" /> ';
             })
             ->editColumn('cate_name', function ($data) {
                 return htmlentities($data->cate_name);

@@ -41,6 +41,7 @@
                 <thead>
                     <tr>
                         <th>Tiêu đề</th>
+                        <th></th>
                         <th>Rate</th>
                         <th>Hype</th>
                         <th>Scam</th>

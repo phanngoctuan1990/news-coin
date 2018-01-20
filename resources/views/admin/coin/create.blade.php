@@ -181,6 +181,11 @@
                                 </label>
                             </div>
                         </div>
+
+                        <div class="form-group">
+                            <label>Nội dung</label>
+                            <textarea class="textarea" name="content" placeholder="Nhập nội dung bài viết"></textarea>
+                        </div>
                     </div>
                     <!-- /.box-body -->
 
@@ -201,8 +206,6 @@
 {!! JsValidator::formRequest('App\Http\Requests\CreateCoinRequest', '#form-create-coin') !!}
 <script>
     $(function () {
-        //bootstrap WYSIHTML5 - text editor
-        $('.textarea').wysihtml5();
         //Date picker
         $('#start-date').datepicker({
             format: 'dd-mm-yyyy',

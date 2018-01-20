@@ -29,6 +29,7 @@ Route::group(['namespace' => 'Frontend'], function () {
         Route::get('/home/coin/datatables', 'HomeController@datatables');
         Route::resource('/new', 'NewsController');
         Route::resource('/contact-us', 'ContactUsController', ['only' => ['store']]);
+        Route::resource('/coins', 'CoinController', ['only' => ['show']]);
     });
 });
 
