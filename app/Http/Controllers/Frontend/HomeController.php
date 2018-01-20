@@ -36,7 +36,7 @@ class HomeController extends Controller
     public function datatables(Request $request)
     {
         $columns = [
-            'coin.id',
+            'coin.slug',
             'coin.name',
             'thumbnail',
             'rate',

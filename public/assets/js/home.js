@@ -33,7 +33,7 @@ $(function() {
         info: false,
         fnRowCallback: function( nRow, aData, iDisplayIndex ) {
             $(nRow).on('click', function(e) {
-                document.location.href = "/coins/" + aData['id'];
+                document.location.href = "/coin/" + aData['slug'];
             })
         }
     });

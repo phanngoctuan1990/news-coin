@@ -2,10 +2,14 @@
 
 namespace App\Models;
 
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model as Eloquent;
+use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 
 class Coin extends Eloquent
 {
+    use Sluggable, SluggableScopeHelpers;
+
     const TYPE_LOW = 1;
     const TYPE_HIGH = 3;
     const TYPE_MEDIUM = 2;
@@ -67,12 +71,26 @@ class Coin extends Eloquent
     ];
 
     /**
-     * Get user belongs to category.
+     * Get coin belongs to category.
      *
      * @return mixed
      */
     public function category()
     {
         return $this->belongsTo(CategoryCoin::class, 'category_coin_id');
+    }
+
+    /**
+     * Return the sluggable configuration array for this model.
+     *
+     * @return array
+     */
+    public function sluggable()
+    {
+        return [
+            'slug' => [
+                'source' => 'name'
+            ]
+        ];
     }
 }
