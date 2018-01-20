@@ -60,7 +60,7 @@ class CoinController extends Controller
         $coin->content    = $data['content'] ?: null;
         $coin->start_date = Carbon::parse($data['start_date'])->format('Y-m-d');
         $coin->end_date   = Carbon::parse($data['end_date'])->format('Y-m-d');
-        dd($data['content']);
+        
         // handle image
         if ($request->hasFile('thumbnail')) {
             \File::delete(public_path('/images/coins/thumbnail/' . $coin->thumbnail));
