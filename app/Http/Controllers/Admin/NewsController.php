@@ -89,11 +89,10 @@ class NewsController extends Controller
             $img = $request->file('thumbnail');
             $input['thumbnail'] = time() . '.' . $img->getClientOriginalExtension();
             $imageResize = Image::make($img->getRealPath());
+            $imageResize->save(public_path('images/news/original/' .$input['thumbnail']));
+            $new->original = $input['thumbnail'];
             $imageResize->resize(360, 203);
             $imageResize->save(public_path('images/news/thumbnail/' .$input['thumbnail']));
-            $destinationPath = public_path('images/news/original/');
-            $img->move($destinationPath, $input['thumbnail']);
-            $new->original = $input['thumbnail'];
             $new->thumbnail = $input['thumbnail'];
         }
         $new->content = $data['content'];

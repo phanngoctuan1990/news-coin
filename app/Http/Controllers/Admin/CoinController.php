@@ -8,6 +8,7 @@ use App\Models\CategoryCoin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateCoinRequest;
 use App\Http\Requests\UpdateCoinRequest;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class CoinController extends Controller
 {
@@ -56,16 +57,20 @@ class CoinController extends Controller
         $coin->moom       = $data['moom'];
         $coin->price      = $data['price'];
         $coin->stage      = $data['stage'];
+        $coin->content    = $data['content'] ?: null;
         $coin->start_date = Carbon::parse($data['start_date'])->format('Y-m-d');
         $coin->end_date   = Carbon::parse($data['end_date'])->format('Y-m-d');
-
+        dd($data['content']);
         // handle image
         if ($request->hasFile('thumbnail')) {
-            \File::delete(public_path('/images/coins/' . $coin->thumbnail));
+            \File::delete(public_path('/images/coins/thumbnail/' . $coin->thumbnail));
+            \File::delete(public_path('images/coins/original/' . $coin->thumbnail));
             $img = $request->file('thumbnail');
             $input['thumbnail'] = time() . '.' . $img->getClientOriginalExtension();
-            $destinationPath = public_path('/images/coins/');
-            $img->move($destinationPath, $input['thumbnail']);
+            $imageResize = Image::make($img->getRealPath());
+            $imageResize->save(public_path('images/coins/original/' . $input['thumbnail']));
+            $imageResize->resize(360, 360);
+            $imageResize->save(public_path('images/coins/thumbnail/' . $input['thumbnail']));
             $coin->thumbnail = $input['thumbnail'];
         }
 
@@ -84,7 +89,7 @@ class CoinController extends Controller
     public function show($id)
     {
         $coin             = Coin::find($id);
-        $coin->thumbnail  = asset('/images/coins/' . $coin->thumbnail);
+        $coin->thumbnail  = asset('/images/coins/thumbnail/' . $coin->thumbnail);
         $coin->start_date = Carbon::parse($coin->start_date)->format('d-m-Y');
         $coin->end_date   = Carbon::parse($coin->end_date)->format('d-m-Y');
         $coin->name       = htmlentities($coin->name);
@@ -108,7 +113,8 @@ class CoinController extends Controller
     {
         $coin = Coin::find($id);
         $coin->delete();
-        \File::delete(public_path('/images/coins/' . $coin->thumbnail));
+        \File::delete(public_path('/images/coins/thumbnail/' . $coin->thumbnail));
+        \File::delete(public_path('images/coins/original/' . $coin->thumbnail));
         flash('Xoá coin thành công', 'success');
         return redirect()->route('admin.coin.index');
     }
@@ -132,6 +138,7 @@ class CoinController extends Controller
         $coin->moom             = $data['moom'];
         $coin->price            = $data['price'];
         $coin->stage            = $data['stage'];
+        $coin->content          = $data['content'] ?: null;
         $coin->start_date       = Carbon::parse($data['start_date'])->format('Y-m-d');
         $coin->end_date         = Carbon::parse($data['end_date'])->format('Y-m-d');
         $coin->round            = 'round';
@@ -139,8 +146,10 @@ class CoinController extends Controller
         // upload image
         $img = $request->file('thumbnail');
         $input['thumbnail'] = time() . '.' . $img->getClientOriginalExtension();
-        $destinationPath = public_path('/images/coins/');
-        $img->move($destinationPath, $input['thumbnail']);
+        $imageResize = Image::make($img->getRealPath());
+        $imageResize->save(public_path('images/coins/original/' . $input['thumbnail']));
+        $imageResize->resize(360, 360);
+        $imageResize->save(public_path('images/coins/thumbnail/' . $input['thumbnail']));
         $coin->thumbnail = $input['thumbnail'];
 
         $coin->save();
@@ -161,7 +170,7 @@ class CoinController extends Controller
                 return htmlentities($data->name);
             })
             ->editColumn('thumbnail', function ($data) {
-                $url = asset('/images/coins/' . $data->thumbnail);
+                $url = asset('/images/coins/thumbnail/' . $data->thumbnail);
                 return '<img src="' . $url . '" border="0" width="40" align="center" />';
             })
             ->editColumn('hype', function ($data) {

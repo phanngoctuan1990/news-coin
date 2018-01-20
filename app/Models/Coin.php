@@ -37,6 +37,7 @@ class Coin extends Eloquent
         'stage',
         'price',
         'round',
+        'content',
     ];
 
     /**
@@ -64,4 +65,14 @@ class Coin extends Eloquent
         self::TYPE_EXCHANGE => '<strong>EXCHANGE</strong>',
         self::TYPE_ICO_TODAY => '<strong>ICO TODAY</strong>',
     ];
+
+    /**
+     * Get user belongs to category.
+     *
+     * @return mixed
+     */
+    public function category()
+    {
+        return $this->belongsTo(CategoryCoin::class, 'category_coin_id');
+    }
 }
