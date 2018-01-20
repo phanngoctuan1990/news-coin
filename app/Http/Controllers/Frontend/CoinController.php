@@ -12,13 +12,13 @@ class CoinController extends Controller
     /**
      * Get coin detail
      *
-     * @param int $id Coin id
+     * @param string $slug News slug
      *
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        $coin = Coin::findOrFail($id);
+        $coin = Coin::findBySlugOrFail($slug);
         return view('frontend.layout.coin.show', compact('coin'));
     }
 }

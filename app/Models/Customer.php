@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 
 class Customer extends Authenticatable
 {
+    use Sluggable, SluggableScopeHelpers;
 
     protected $table = 'customer';
 
@@ -28,4 +31,18 @@ class Customer extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * Return the sluggable configuration array for this model.
+     *
+     * @return array
+     */
+    public function sluggable()
+    {
+        return [
+            'slug' => [
+                'source' => 'name'
+            ]
+        ];
+    }
 }

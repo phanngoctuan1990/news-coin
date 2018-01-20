@@ -27,9 +27,9 @@ Route::group(['namespace' => 'Frontend'], function () {
     Route::group(['middleware' => 'auth:web'], function () {
         Route::get('/', ['as' => 'home.index', 'uses' => 'HomeController@index']);
         Route::get('/home/coin/datatables', 'HomeController@datatables');
-        Route::resource('/new', 'NewsController');
         Route::resource('/contact-us', 'ContactUsController', ['only' => ['store']]);
-        Route::resource('/coins', 'CoinController', ['only' => ['show']]);
+        Route::get('/news/{slug}', ['as' => 'news.show', 'uses' => 'NewsController@show']);
+        Route::get('/coin/{slug}', ['as' => 'coin.show', 'uses' => 'CoinController@show']);
     });
 });
 

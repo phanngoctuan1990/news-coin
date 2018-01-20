@@ -16,7 +16,7 @@
                         <h3 class="title">Danh sách tin tức</h3>
                         @foreach($listNews as $value)
                         <div class="media">
-                            <a href="{{ route('new.show', $value->id) }}">
+                            <a href="{{ route('news.show', $value->slug) }}">
                                 <div class="media-left">
                                     <img class="media-object" src="{{ asset('/images/news/thumbnail/'. $value->thumbnail) }}" width="85" height="60" alt="">
                                 </div>
@@ -40,7 +40,7 @@
                     <h3 class="title">Tin tức nổi bật</h3>
                     @foreach($newsPopulare as $newPopulare)
                     <div class="widget-post">
-                        <a href="{{ route('new.show', $newPopulare->id) }}">
+                        <a href="{{ route('news.show', $newPopulare->slug) }}">
                             <img src="{{ asset('/images/news/thumbnail/'. $newPopulare->thumbnail) }}" width="85" height="60" alt="">{{ str_limit($newPopulare->title, 30) }}
                         </a>
                         <ul class="blog-meta">
