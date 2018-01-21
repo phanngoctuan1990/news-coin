@@ -1,4 +1,4 @@
-<div id="contact" class="section md-padding">
+<div id="contact" class="section sm-padding">
 
     <!-- Container -->
     <div class="container">

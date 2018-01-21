@@ -3,11 +3,16 @@
 <div id="about" class="section">
     <!-- Container -->
     <div class="container">
+        <!-- Header Banner -->
+        <a href="{{ $bannerHeader ? $bannerHeader->url : '' }}">
+            <img class="img-responsive" src="{{ $bannerHeader ? asset('/images/banner/'.$bannerHeader->image) : '' }}" alt="banner">
+        </a>
+        <!-- Header Banner -->
         <!-- Filter -->
         <div class="row cls-menu-filter">
             <!-- Right filter -->
             <div class="col-lg-6">
-                
+
             </div>
             <!-- Right filter -->
             <!-- Left filter -->
@@ -62,6 +67,9 @@
 <!-- Blogs -->
 @include('frontend.layout.partials.blog')
 <!-- Feature -->
+<!-- Ads Slide -->
+@include('frontend.layout.partials.ads-slide')
+<!-- Ads Slide -->
 @include('frontend.layout.partials.feature')
 <!-- Numbers -->
 @include('frontend.layout.partials.number')

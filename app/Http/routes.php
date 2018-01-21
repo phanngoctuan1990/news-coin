@@ -84,5 +84,13 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
             'as' => 'admin.contact.reply',
             'uses' => 'ContactUsController@reply'
         ]);
+        
+        // Banner
+        Route::get('/banner/datatables', 'BannerController@datatables');
+        Route::resource('/banner', 'BannerController');
+        
+        // Link youtube
+        Route::get('/youtube/datatables', 'YoutubeController@datatables');
+        Route::resource('/youtube', 'YoutubeController');
     });
 });

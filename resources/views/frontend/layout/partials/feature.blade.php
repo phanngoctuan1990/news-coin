@@ -1,4 +1,4 @@
-<div id="features" class="section md-padding bg-grey">
+<div id="features" class="section sm-padding bg-grey">
 
     <!-- Container -->
     <div class="container">
@@ -35,10 +35,11 @@
             <!-- About slider -->
             <div class="col-md-6">
                 <div id="about-slider" class="owl-carousel owl-theme">
-                    <img class="img-responsive" src="./images/front/about1.jpg" alt="">
-                    <img class="img-responsive" src="./images/front/about2.jpg" alt="">
-                    <img class="img-responsive" src="./images/front/about1.jpg" alt="">
-                    <img class="img-responsive" src="./images/front/about2.jpg" alt="">
+                    @if($aboutUs)
+                        @foreach($aboutUs as $value)
+                            <img class="img-responsive" src="{{ asset('/images/banner/'.$value->image) }}" alt="">
+                        @endforeach
+                    @endif
                 </div>
             </div>
             <!-- /About slider -->

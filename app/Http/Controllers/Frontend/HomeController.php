@@ -7,6 +7,7 @@ use App\Models\Coin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\News;
+use App\Models\Images;
 
 class HomeController extends Controller
 {
@@ -22,8 +23,27 @@ class HomeController extends Controller
                 ->where('status', News::ACCEPT)
                 ->take(3)
                 ->get();
+        $linkYoutube = \DB::table('youtube')
+                ->orderBy('updated_at', 'DESC')
+                ->first();
+        $bannerHeader = \DB::table('images')
+                ->where('position', Images::HEADER)
+                ->orderBy('updated_at', 'desc')
+                ->first();
+        $bannerFooter = \DB::table('images')
+                ->where('position', Images::FOOTER)
+                ->orderBy('updated_at', 'desc')
+                ->first();
+        $adsSlides = \DB::table('images')
+                ->where('position', Images::SLIDE)
+                ->orderBy('updated_at', 'desc')
+                ->get();
+        $aboutUs = \DB::table('images')
+                ->where('position', Images::ABOUT_US)
+                ->orderBy('updated_at', 'desc')
+                ->get();
         $totalCoin = Coin::count();
-        return view('frontend.home.index', compact('news', 'totalCoin'));
+        return view('frontend.home.index', compact('news', 'totalCoin', 'linkYoutube', 'bannerHeader', 'bannerFooter', 'adsSlides', 'aboutUs'));
     }
 
     /**
