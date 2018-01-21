@@ -4,8 +4,8 @@
     <!-- Container -->
     <div class="container">
         <!-- Header Banner -->
-        <a href="{{ $bannerHeader->url }}">
-            <img class="img-responsive" src="{{ asset('/images/banner/'.$bannerHeader->image) }}" alt="banner">
+        <a href="{{ $bannerHeader ? $bannerHeader->url : '' }}">
+            <img class="img-responsive" src="{{ $bannerHeader ? asset('/images/banner/'.$bannerHeader->image) : '' }}" alt="banner">
         </a>
         <!-- Header Banner -->
         <!-- Filter -->

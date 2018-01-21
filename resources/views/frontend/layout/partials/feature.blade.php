@@ -35,9 +35,11 @@
             <!-- About slider -->
             <div class="col-md-6">
                 <div id="about-slider" class="owl-carousel owl-theme">
-                    @foreach($aboutUs as $value)
-                        <img class="img-responsive" src="{{ asset('/images/banner/'.$value->image) }}" alt="">
-                    @endforeach
+                    @if($aboutUs)
+                        @foreach($aboutUs as $value)
+                            <img class="img-responsive" src="{{ asset('/images/banner/'.$value->image) }}" alt="">
+                        @endforeach
+                    @endif
                 </div>
             </div>
             <!-- /About slider -->

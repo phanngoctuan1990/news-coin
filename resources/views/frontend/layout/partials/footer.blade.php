@@ -2,8 +2,8 @@
     <!-- Container -->
     <div class="container">
         <!-- Footer Banner -->
-        <a href="{{ $bannerFooter->url }}">
-            <img class="img-responsive" style="padding-bottom: 60px;" src="{{ asset('/images/banner/'.$bannerFooter->image) }}" alt="banner">
+        <a href="{{ $bannerFooter ? $bannerFooter->url : '' }}">
+            <img class="img-responsive" style="padding-bottom: 60px;" src="{{ $bannerFooter ? asset('/images/banner/'.$bannerFooter->image) : '' }}" alt="banner">
         </a>
         <!-- Footer Banner -->
         <!-- Row -->

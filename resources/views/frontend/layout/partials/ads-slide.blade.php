@@ -16,11 +16,13 @@
             <div class="col-md-10 col-md-offset-1">
                 <div id="testimonial-slider" class="owl-carousel owl-theme">
                     <!-- image -->
-                    @foreach($adsSlides as $adsSlide)
-                        <a href="{{ $adsSlide->url }}">
-                            <img style="margin: auto; width: 300px; height: 300px" src="{{ asset('/images/banner/'.$adsSlide->image) }}" alt="banner">
-                        </a>
-                    @endforeach
+                    @if($adsSlides)
+                        @foreach($adsSlides as $adsSlide)
+                            <a href="{{ $adsSlide->url }}">
+                                <img style="margin: auto; width: 300px; height: 300px" src="{{ asset('/images/banner/'.$adsSlide->image) }}" alt="banner">
+                            </a>
+                        @endforeach
+                    @endif
                     <!-- /image -->
                 </div>
             </div>
