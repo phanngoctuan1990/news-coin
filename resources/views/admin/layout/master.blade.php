@@ -80,6 +80,8 @@
         <script src="{!! asset('assets/js/customer.js') !!}"></script>
         <script src="{!! asset('assets/js/category-coin.js') !!}"></script>
         <script src="{!! asset('assets/js/contact-us.js') !!}"></script>
+        <script src="{!! asset('assets/js/banner.js') !!}"></script>
+        <script src="{!! asset('assets/js/youtube.js') !!}"></script>
         <!-- Tinymce -->
         <script src="{!! asset('assets/js/tinymce/js/tinymce/jquery.tinymce.min.js') !!}"></script>
         <script src="{!! asset('assets/js/tinymce/js/tinymce/tinymce.min.js') !!}"></script>

@@ -1,4 +1,4 @@
-<div id="blog" class="section md-padding bg-grey">
+<div id="blog" class="section sm-padding bg-grey">
     <div class="container">
         <div class="row">
             <div class="section-header text-center">

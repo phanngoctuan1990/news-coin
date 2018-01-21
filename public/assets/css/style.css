@@ -42,6 +42,10 @@ Table OF Contents
 \*------------------------------------*/
 
 /* -- typography -- */
+@font-face {
+  font-family: "Baar-Antropos-Display-Regular";
+  src: url("/assets/fonts/Baar-Antropos-Display-Regular.ttf");
+}
 
 body {
   font-family: 'Varela Round', sans-serif;
@@ -99,12 +103,26 @@ a:focus {
   color: #6195ff;
 }
 
+.custom-padding {
+  padding-top: 10px;
+  padding-left: 14px;
+}
+
+.logo {
+  font-size: 30px;
+  font-family: "Baar-Antropos-Display-Regular", sans-serif;
+}
+
 .main-color {
   color: #6195ff;
 }
 
 .white-text {
   color: #fff;
+}
+
+.black-text {
+  color: #10161a;
 }
 
 ::-moz-selection {

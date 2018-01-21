@@ -1,6 +1,11 @@
 <footer id="footer" class="sm-padding bg-dark">
     <!-- Container -->
     <div class="container">
+        <!-- Footer Banner -->
+        <a href="{{ $bannerFooter->url }}">
+            <img class="img-responsive" style="padding-bottom: 60px;" src="{{ asset('/images/banner/'.$bannerFooter->image) }}" alt="banner">
+        </a>
+        <!-- Footer Banner -->
         <!-- Row -->
         <div class="row">
 
@@ -9,7 +14,7 @@
                 <!-- footer logo -->
                 <div class="footer-logo">
                     <a href="{{ route('home.index') }}">
-                        <img src="{{ asset('/images/front/logo-alt.png') }}" alt="logo">
+                        <h2 class="logo white-text">IDauTu.com</h2>
                     </a>
                 </div>
                 <!-- /footer logo -->

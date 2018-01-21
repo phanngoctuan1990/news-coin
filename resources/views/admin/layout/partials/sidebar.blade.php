@@ -140,6 +140,34 @@ if (!(auth('admin')->user()->is_admin)) {
             @endif
             @endif
             @endif
+            <li class="treeview {{ areActiveRoutes(['admin.banner.index', 'admin.banner.create']) }}">
+                <a href="#">
+                    <i class="glyphicon glyphicon-picture"></i>
+                    <span>Quản lý hình ảnh</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="{{ areActiveRoutes(['admin.banner.index']) }}"><a href="{{ route('admin.banner.index') }}"><i class="fa fa-circle-o"></i> Danh sách hình ảnh</a></li>
+                    <li class="{{ areActiveRoutes(['admin.banner.create']) }}"><a href="{{ route('admin.banner.create') }}"><i class="fa fa-circle-o"></i> Tạo mới</a></li>
+                </ul>
+            </li>
+            
+            <li class="treeview {{ areActiveRoutes(['admin.youtube.index', 'admin.youtube.create']) }}">
+                <a href="#">
+                    <i class="glyphicon glyphicon-picture"></i>
+                    <span>Quản lý link youtube</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="{{ areActiveRoutes(['admin.youtube.index']) }}"><a href="{{ route('admin.youtube.index') }}"><i class="fa fa-circle-o"></i> Danh sách link youtube</a></li>
+                    <li class="{{ areActiveRoutes(['admin.youtube.create']) }}"><a href="{{ route('admin.youtube.create') }}"><i class="fa fa-circle-o"></i> Tạo mới</a></li>
+                </ul>
+            </li>
+            
         </ul>
     </section>
 </aside>

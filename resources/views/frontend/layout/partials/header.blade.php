@@ -4,8 +4,7 @@
             <div class="navbar-header">
                 <div class="navbar-brand">
                     <a href="{{ route('home.index') }}">
-                        <img class="logo" src="{{ '/images/front/logo.png' }}" alt="logo">
-                        <img class="logo-alt" src="{{ '/images/front/logo-alt.png' }}" alt="logo">
+                        <h2 class="logo custom-padding black-text">IDauTu.com</h2>
                     </a>
                 </div>
                 <div class="nav-collapse">
