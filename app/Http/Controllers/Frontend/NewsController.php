@@ -28,7 +28,7 @@ class NewsController extends Controller
         $listNews = \DB::table('news')
                 ->where('slug', '<>', $new->slug)
                 ->where('status', News::ACCEPT)
-                ->paginate(20);
+                ->paginate(5);
         return view('frontend.layout.partials.show', compact('new', 'listNews', 'newsPopulare'));
     }
 }

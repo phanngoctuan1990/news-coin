@@ -40,7 +40,7 @@
             <!-- embed -->
             <div class="col-sm-3 col-md-6">
                 <div class="embed-responsive embed-responsive-16by9">
-                    <iframe src="https://www.youtube.com/embed/tbegIkZ4UzQ" frameborder="0" gesture="media"
+                    <iframe src="{{ $linkYoutube->url }}" frameborder="0" gesture="media"
                         allow="encrypted-media" allowfullscreen></iframe>
                 </div>
             </div>
