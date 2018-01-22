@@ -1,7 +1,12 @@
 @extends('frontend.layout.master')
 @section('content')
-<div id="blog" class="section sm-padding">
+<div id="blog">
     <div class="container">
+        <!-- Header Banner -->
+        <a href="https://google.com.vn">
+            <img style="padding-bottom: 60px;" class="img-responsive" src="{{ $bannerHeader ? asset('/images/banner/'.$bannerHeader->image) : '' }}" alt="banner">
+        </a>
+        <!-- Header Banner -->
         <div class="row">
             <main id="main">
                 <div class="blog">
