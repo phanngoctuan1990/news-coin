@@ -30,10 +30,14 @@ class NewsController extends Controller
                 ->where('slug', '<>', $new->slug)
                 ->where('status', News::ACCEPT)
                 ->paginate(5);
+        $bannerHeader = \DB::table('images')
+                ->where('position', Images::HEADER)
+                ->orderBy('updated_at', 'desc')
+                ->first();
         $bannerFooter = \DB::table('images')
                 ->where('position', Images::FOOTER)
                 ->orderBy('updated_at', 'desc')
                 ->first();
-        return view('frontend.layout.partials.show', compact('new', 'listNews', 'newsPopulare', 'bannerFooter'));
+        return view('frontend.layout.partials.show', compact('new', 'listNews', 'newsPopulare', 'bannerFooter', 'bannerHeader'));
     }
 }
