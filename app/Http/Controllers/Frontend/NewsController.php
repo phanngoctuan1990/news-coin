@@ -3,6 +3,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\News;
+use App\Models\Images;
 
 class NewsController extends Controller
 {
@@ -29,6 +30,10 @@ class NewsController extends Controller
                 ->where('slug', '<>', $new->slug)
                 ->where('status', News::ACCEPT)
                 ->paginate(5);
-        return view('frontend.layout.partials.show', compact('new', 'listNews', 'newsPopulare'));
+        $bannerFooter = \DB::table('images')
+                ->where('position', Images::FOOTER)
+                ->orderBy('updated_at', 'desc')
+                ->first();
+        return view('frontend.layout.partials.show', compact('new', 'listNews', 'newsPopulare', 'bannerFooter'));
     }
 }
