@@ -83,7 +83,7 @@
                     <p>quản lý</p>
                 </div>
                 <div class="icon">
-                    <i class="ion ion-compose"></i>
+                    <i class="ion ion-image"></i>
                 </div>
                 <a href="{{ route('admin.banner.index') }}" class="small-box-footer">Danh sách hình ảnh <i class="fa fa-arrow-circle-right"></i></a>
             </div>
@@ -99,7 +99,7 @@
                     <p>quản lý</p>
                 </div>
                 <div class="icon">
-                    <i class="ion ion-compose"></i>
+                    <i class="ion ion-social-hackernews"></i>
                 </div>
                 <a href="{{ route('admin.youtube.index') }}" class="small-box-footer">Link Youtube <i class="fa fa-arrow-circle-right"></i></a>
             </div>
