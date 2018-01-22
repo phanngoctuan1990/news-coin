@@ -4,7 +4,7 @@
     <div class="container">
         <!-- Header Banner -->
         <a href="https://google.com.vn">
-            <img style="padding-bottom: 60px;" class="img-responsive" src="/images/front/banner_development.jpg" alt="banner">
+            <img style="padding-bottom: 60px;" class="img-responsive" src="{{ $bannerHeader ? asset('/images/banner/'.$bannerHeader->image) : '' }}" alt="banner">
         </a>
         <!-- Header Banner -->
         <div class="row">
