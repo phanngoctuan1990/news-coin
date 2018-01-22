@@ -1,6 +1,6 @@
 @extends('frontend.layout.master')
 @section('content')
-<div id="blog" class="section sm-padding">
+<div id="blog">
     <div class="container">
         <!-- Header Banner -->
         <a href="https://google.com.vn">
