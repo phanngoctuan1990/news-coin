@@ -28,4 +28,17 @@ class CreateBannerRequest extends Request
         ];
         return $rules;
     }
+    
+    /**
+     * Determine message.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'original.required'    => 'Bắt buộc nhập hình ảnh',
+            'position.required'      => 'Bắt buộc chọn một vị trí hiển thị hình ảnh',
+        ];
+    }
 }

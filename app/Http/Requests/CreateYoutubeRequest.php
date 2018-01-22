@@ -27,4 +27,16 @@ class CreateYoutubeRequest extends Request
         ];
         return $rules;
     }
+    
+    /**
+     * Determine message.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'url.required'    => 'Bắt buộc nhập link youtube',
+        ];
+    }
 }
