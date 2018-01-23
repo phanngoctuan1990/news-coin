@@ -32,6 +32,8 @@ class BannerController extends Controller
     /**
      * Store
      *
+     * @param CreateBannerRequest $request Store
+     *
      * @return void
      */
     public function store(CreateBannerRequest $request)
@@ -54,7 +56,6 @@ class BannerController extends Controller
                 $imageResize->save(public_path('images/banner/' .$input['original']));
                 $banner->image = $input['original'];
             }
-            
         } elseif ($data['position'] == Images::SLIDE) {
             if ($request->hasFile('original')) {
                 \File::delete(public_path('/images/banner/' . $banner->original));
@@ -107,7 +108,7 @@ class BannerController extends Controller
     
     /**
      * Form detail
-     * 
+     *
      * @param int $id Image id
      *
      * @return void
@@ -161,7 +162,6 @@ class BannerController extends Controller
                 $imageResize->save(public_path('images/banner/' .$input['original']));
                 $banner->image = $input['original'];
             }
-            
         } elseif ($data['position'] == Images::SLIDE) {
             if ($request->hasFile('original')) {
                 \File::delete(public_path('/images/banner/' . $banner->original));

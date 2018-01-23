@@ -23,7 +23,7 @@
                         <div class="media">
                             <a href="{{ route('news.show', $value->slug) }}">
                                 <div class="media-left">
-                                    <img class="media-object" src="{{ asset('/images/news/thumbnail/'. $value->thumbnail) }}" width="85" height="60" alt="">
+                                    <img class="media-object" id="news-image" src="{{ asset('/images/news/thumbnail/'. $value->thumbnail) }}" width="85" height="60" alt="">
                                 </div>
                                 <div class="media-body">
                                     <h5 class="media-heading">{{ $value->title }}</h5>

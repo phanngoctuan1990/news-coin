@@ -35,7 +35,7 @@ class Images extends Eloquent
     public function getNamePositionAttribute()
     {
         switch ($this->position) {
-            case Images::HEADER: 
+            case Images::HEADER:
                 return 'Header';
             case Images::FOOTER:
                 return 'Footer';
