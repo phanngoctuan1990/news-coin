@@ -46,6 +46,5 @@ $(function() {
 
   $(document).ready(function() {
       $('.blog-content').find('img').addClass('img-responsive');
-      // $('#news-image').removeClass('img-responsive');
   });
 });
