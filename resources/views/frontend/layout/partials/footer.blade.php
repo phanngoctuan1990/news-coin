@@ -14,7 +14,7 @@
                 <!-- footer logo -->
                 <div class="footer-logo">
                     <a href="{{ route('home.index') }}">
-                        <h2 class="logo white-text">IDauTu.com</h2>
+                        <h2 class="logo white-text">IDauTu.net</h2>
                     </a>
                 </div>
                 <!-- /footer logo -->
@@ -46,7 +46,7 @@
 
                 <!-- footer copyright -->
                 <div class="footer-copyright">
-                    <p>Copyright © 2017. All Rights Reserved.</p>
+                    <p>Copyright © 2018 by idautu.net</p>
                 </div>
                 <!-- /footer copyright -->
 

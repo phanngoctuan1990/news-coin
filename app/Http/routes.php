@@ -16,12 +16,12 @@
  */
 Route::group(['namespace' => 'Frontend'], function () {
     // Login customer
-    Route::get('login', ['as' => 'get.login', 'uses' => 'AuthController@getLogin']);
+    Route::get('dang-nhap', ['as' => 'get.login', 'uses' => 'AuthController@getLogin']);
     Route::post('login', ['as' => 'post.login', 'uses' => 'AuthController@postLogin']);
-    Route::get('logout', ['as' => 'get.logout', 'uses' => 'AuthController@getLogout']);
+    Route::get('dang-xuat', ['as' => 'get.logout', 'uses' => 'AuthController@getLogout']);
 
     // Register customer
-    Route::get('register', ['as' => 'get.register', 'uses' => 'AuthController@getRegister']);
+    Route::get('dang-ky', ['as' => 'get.register', 'uses' => 'AuthController@getRegister']);
     Route::post('register', ['as' => 'post.register', 'uses' => 'AuthController@postRegister']);
     
     Route::group(['middleware' => 'auth:web'], function () {
