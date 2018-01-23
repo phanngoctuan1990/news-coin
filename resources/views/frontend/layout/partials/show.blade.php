@@ -11,7 +11,7 @@
             <main id="main" class="col-md-9">
                 <div class="blog">
                     <div class="blog-img">
-                        <img class="img-responsive" src="{{ asset('/images/news/original/'. $new->original) }}" alt="">
+                        <img class="img-responsive" src="{{ asset('/images/news/original/'. $new->original) }}" alt="" width="500" height="500">
                     </div>
                     <div class="blog-content">
                         <h3>{{ $new->title }}</h3>
