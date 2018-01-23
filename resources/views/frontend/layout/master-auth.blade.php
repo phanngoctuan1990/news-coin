@@ -21,7 +21,7 @@
     <body class="hold-transition login-page" style="background-image: url('/images/front/bg_coin.jpg');">
         <div class="login-box">
             <div class="login-logo">
-                <h2 class="logo white-text">IDauTu.com</h2>
+                <h2 class="logo white-text">IDauTu.net</h2>
             </div>
             @include('flash::message')
             @yield('content')

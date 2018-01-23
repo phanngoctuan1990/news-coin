@@ -25,7 +25,7 @@ class Authenticate
                 if ($guard == 'admin') {
                     return redirect('admin');
                 } else {
-                    return redirect('login');
+                    return redirect('dang-nhap');
                 }
             }
         }
