@@ -28,7 +28,7 @@ Route::group(['namespace' => 'Frontend'], function () {
         Route::get('/', ['as' => 'home.index', 'uses' => 'HomeController@index']);
         Route::get('/home/coin/datatables', 'HomeController@datatables');
         Route::resource('/contact-us', 'ContactUsController', ['only' => ['store']]);
-        Route::get('/news/{slug}', ['as' => 'news.show', 'uses' => 'NewsController@show']);
+        Route::get('/tin-tuc/{slug}', ['as' => 'news.show', 'uses' => 'NewsController@show']);
         Route::get('/coin/{slug}', ['as' => 'coin.show', 'uses' => 'CoinController@show']);
     });
 });

@@ -19,7 +19,7 @@
                             <h3 class="white-text">
                                 <span class="counter">{{ Visitor::count() }}</span>
                             </h3>
-                            <span class="white-text">Visitors</span>
+                            <span class="white-text">Lượt xem</span>
                         </div>
                     </div>
                     <!-- /number -->

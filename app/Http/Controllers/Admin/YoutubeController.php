@@ -31,6 +31,8 @@ class YoutubeController extends Controller
     /**
      * Store
      *
+     * @param CreateYoutubeRequest $request Store
+     *
      * @return void
      */
     public function store(CreateYoutubeRequest $request)
@@ -62,7 +64,7 @@ class YoutubeController extends Controller
     
     /**
      * Form detail
-     * 
+     *
      * @param int $id Youtube id
      *
      * @return void
@@ -77,7 +79,7 @@ class YoutubeController extends Controller
      * Update the specified resource in storage.
      *
      * @param UpdateYoutubeRequest $request request update
-     * @param int                 $id       Youtube id
+     * @param int                  $id      Youtube id
      *
      * @return \Illuminate\Http\Response
      */

@@ -14,13 +14,14 @@
         <link rel="stylesheet" href="{!! asset('assets/css/ionicons.min.css') !!}">
         <!-- Theme style -->
         <link rel="stylesheet" href="{!! asset('assets/css/AdminLTE.min.css') !!}">
+        <link rel="stylesheet" href="{!! asset('assets/css/style.css') !!}">
 
     </head>
 
-    <body class="hold-transition login-page">
+    <body class="hold-transition login-page" style="background-image: url('/images/front/bg_coin.jpg');">
         <div class="login-box">
             <div class="login-logo">
-                <a href="#"><b>IDau</b>Tu</a>
+                <h2 class="logo white-text">IDauTu.com</h2>
             </div>
             @include('flash::message')
             @yield('content')
