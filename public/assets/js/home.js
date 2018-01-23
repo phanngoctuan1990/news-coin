@@ -45,7 +45,7 @@ $(function() {
   });
 
   $(document).ready(function() {
-      $('img').addClass('img-responsive');
-      $('#news-image').removeClass('img-responsive');
+      $('.blog-content').find('img').addClass('img-responsive');
+      // $('#news-image').removeClass('img-responsive');
   });
 });
